@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أعمالنا - روكيت للتسويق الإلكتروني والبرمجة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <span class="logo-text">روكيت</span>
+          <span class="logo-icon">🚀</span>
+        </a>
+        
+        <button id="menuToggle" class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul id="navMenu" class="nav-menu">
+          <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+          <li><a href="about.html" class="nav-link">من نحن</a></li>
+          <li><a href="services.html" class="nav-link">خدماتنا</a></li>
+          <li><a href="portfolio.html" class="nav-link active">أعمالنا</a></li>
+          <li><a href="team.html" class="nav-link">فريقنا</a></li>
+          <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-title">أعمالنا</h1>
+      <div class="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="current-page">أعمالنا</span>
+      </div>
+    </div>
+    <div class="header-decoration"></div>
+  </div>
+
+  <!-- Portfolio Intro -->
+  <section class="portfolio-intro">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-badge">مشاريعنا</span>
+        <h2 class="section-title">أعمال <span class="text-gradient">نفتخر بها</span></h2>
+        <p class="section-description">
+          استكشف بعض الأعمال المميزة التي قمنا بتنفيذها لعملائنا في مختلف المجالات.
+        </p>
+      </div>
+      
+      <div class="portfolio-filters">
+        <button class="filter-button active" data-filter="all">الكل</button>
+        <button class="filter-button" data-filter="web">تصميم المواقع</button>
+        <button class="filter-button" data-filter="app">تطبيقات الجوال</button>
+        <button class="filter-button" data-filter="marketing">التسويق الرقمي</button>
+        <button class="filter-button" data-filter="branding">الهوية البصرية</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio-main">
+    <div class="container">
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="متجر الأناقة الإلكتروني">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تصميم متجر إلكتروني</span>
+            <h3 class="portfolio-title">متجر الأناقة</h3>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="تطبيق حجز المواعيد">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تطبيق جوال</span>
+            <h3 class="portfolio-title">تطبيق حجز المواعيد</h3>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="portfolio-item" data-category="marketing">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="حملة شركة العقارات المتحدة">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تسويق رقمي</span>
+            <h3 class="portfolio-title">حملة شركة العقارات المتحدة</h3>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="portfolio-item" data-category="branding">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="الهوية البصرية لمطعم الشرق">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">الهوية البصرية</span>
+            <h3 class="portfolio-title">مطعم الشرق</h3>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="موقع شركة البناء المتحدة">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تصميم موقع إلكتروني</span>
+            <h3 class="portfolio-title">شركة البناء المتحدة</h3>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1621274282229-64a8ad819e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="تطبيق الخدمات المنزلية">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تطبيق جوال</span>
+            <h3 class="portfolio-title">تطبيق الخدمات المنزلية</h3>
+          </div>
+        </div>
+        
+        <!-- Project 7 -->
+        <div class="portfolio-item" data-category="marketing">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="حملة إطلاق منتج جديد">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">تسويق رقمي</span>
+            <h3 class="portfolio-title">حملة إطلاق منتج جديد</h3>
+          </div>
+        </div>
+        
+        <!-- Project 8 -->
+        <div class="portfolio-item" data-category="branding">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1636633762833-5d1658f1e29b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2786&q=80" alt="الهوية البصرية لصالون التجميل">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">الهوية البصرية</span>
+            <h3 class="portfolio-title">صالون التجميل</h3>
+          </div>
+        </div>
+        
+        <!-- Project 9 -->
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="منصة تعليمية إلكترونية">
+            <div class="portfolio-overlay">
+              <a href="#" class="view-project-btn">عرض التفاصيل</a>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">منصة تعليمية</span>
+            <h3 class="portfolio-title">منصة العلم للتعليم</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-badge">عملاؤنا</span>
+        <h2 class="section-title">نفخر <span class="text-gradient">بثقتهم بنا</span></h2>
+      </div>
+      
+      <div class="clients-grid">
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+1" alt="Client 1">
+        </div>
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+2" alt="Client 2">
+        </div>
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+3" alt="Client 3">
+        </div>
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+4" alt="Client 4">
+        </div>
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+5" alt="Client 5">
+        </div>
+        <div class="client-item">
+          <img src="https://via.placeholder.com/200x80?text=LOGO+6" alt="Client 6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-badge">آراء العملاء</span>
+        <h2 class="section-title">ماذا يقول <span class="text-gradient">عملاؤنا عنا</span></h2>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p class="testimonial-text">
+              كانت تجربتنا مع فريق روكيت ممتازة. قدموا لنا حلاً متكاملاً لمتجرنا الإلكتروني ساهم في زيادة مبيعاتنا بشكل كبير. أنصح بشدة بالتعامل معهم.
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمد السعيد">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">محمد السعيد</h4>
+              <p class="author-position">المدير التنفيذي - شركة الأناقة</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p class="testimonial-text">
+              استطاع فريق روكيت تحويل فكرتنا إلى تطبيق احترافي يلبي جميع احتياجاتنا. كانوا متعاونين للغاية ومرنين في التعامل مع متطلباتنا المتغيرة.
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="سارة الأحمد">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">سارة الأحمد</h4>
+              <p class="author-position">مؤسس - تطبيق صحتي</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p class="testimonial-text">
+              حققت حملاتنا التسويقية مع روكيت نتائج تفوق توقعاتنا. الفريق محترف ويمتلك خبرة واسعة في مجال التسويق الرقمي والتحليلات.
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="خالد العمري">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">خالد العمري</h4>
+              <p class="author-position">مدير التسويق - شركة العقارات المتحدة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">هل لديك مشروع تريد تنفيذه؟</h2>
+        <p class="cta-description">دعنا نساعدك في تحويل أفكارك إلى واقع رقمي مبتكر</p>
+        <a href="contact.html" class="animated-button cta-button">
+          <span>تواصل معنا الآن</span>
+          <span class="icon">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-text">روكيت</span>
+            <span class="logo-icon">🚀</span>
+          </a>
+          <p class="footer-description">
+            نقدم حلول رقمية متكاملة للشركات والأفراد لمساعدتهم على تحقيق أهدافهم وتوسيع نطاق أعمالهم.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link"><span>فيسبوك</span></a>
+            <a href="#" class="social-link"><span>تويتر</span></a>
+            <a href="#" class="social-link"><span>انستغرام</span></a>
+            <a href="#" class="social-link"><span>لينكد إن</span></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-links-column">
+            <h3 class="footer-links-title">روابط سريعة</h3>
+            <ul class="footer-menu">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">من نحن</a></li>
+              <li><a href="services.html">خدماتنا</a></li>
+              <li><a href="portfolio.html">أعمالنا</a></li>
+              <li><a href="team.html">فريقنا</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h3 class="footer-links-title">خدماتنا</h3>
+            <ul class="footer-menu">
+              <li><a href="services.html">تصميم المواقع</a></li>
+              <li><a href="services.html">تطوير التطبيقات</a></li>
+              <li><a href="services.html">التسويق الرقمي</a></li>
+              <li><a href="services.html">تحسين محركات البحث</a></li>
+              <li><a href="services.html">إدارة وسائل التواصل</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h3 class="footer-links-title">تواصل معنا</h3>
+            <ul class="contact-info">
+              <li>
+                <span class="contact-icon">📍</span>
+                <span>الرياض، المملكة العربية السعودية</span>
+              </li>
+              <li>
+                <span class="contact-icon">📞</span>
+                <span>+966 123 456 789</span>
+              </li>
+              <li>
+                <span class="contact-icon">📧</span>
+                <span>info@rocket-agency.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">جميع الحقوق محفوظة &copy; 2023 شركة روكيت للتسويق الإلكتروني والبرمجة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    // Portfolio filtering
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Reset active state
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          const filterValue = button.dataset.filter;
+          
+          portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.dataset.category === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
