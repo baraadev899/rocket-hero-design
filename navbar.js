@@ -34,11 +34,3 @@ function initNavbar() {
     });
   });
 }
-
-// Add script tag for Lovable
-if (!document.querySelector('script[src="https://cdn.gpteng.co/gptengineer.js"]')) {
-  const lovableScript = document.createElement('script');
-  lovableScript.src = 'https://cdn.gpteng.co/gptengineer.js';
-  lovableScript.type = 'module';
-  document.head.appendChild(lovableScript);
-}
