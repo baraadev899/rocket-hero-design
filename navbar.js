@@ -33,4 +33,15 @@ function initNavbar() {
       menuToggle.classList.remove('active');
     });
   });
+  
+  // Set active link based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('active');
+    } else if (currentPage === 'index.html' && linkHref === 'index.html') {
+      link.classList.add('active');
+    }
+  });
 }
