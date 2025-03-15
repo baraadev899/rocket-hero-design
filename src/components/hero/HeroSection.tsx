@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import RocketAnimation from './RocketAnimation';
 import CodeParticles from './CodeParticles';
 import AnimatedButton from './AnimatedButton';
-import { Sparkles, Code, BarChart } from 'lucide-react';
+import { Sparkles, Code, BarChart, ArrowRight } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   // Set RTL direction when component mounts
