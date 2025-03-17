@@ -45,18 +45,3 @@ function initNavbar() {
     }
   });
 }
-
-// Add Lovable script tag initialization
-function addLovableScript() {
-  const script = document.createElement('script');
-  script.src = 'https://cdn.gpteng.co/gptengineer.js';
-  script.type = 'module';
-  document.head.appendChild(script);
-}
-
-// Initialize Lovable script
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', addLovableScript);
-} else {
-  addLovableScript();
-}
