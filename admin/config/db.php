@@ -2,8 +2,8 @@
 <?php
 // Database configuration
 $db_host = 'localhost';
-$db_user = 'root';  // Change to your database username
-$db_pass = '';      // Change to your database password
+$db_user = 'root';  // قم بتغيير اسم مستخدم قاعدة البيانات الخاص بك
+$db_pass = '';      // قم بتغيير كلمة مرور قاعدة البيانات الخاصة بك
 $db_name = 'rocket_agency';
 
 // Create connection
