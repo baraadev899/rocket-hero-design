@@ -21,6 +21,7 @@ export default {
 		extend: {
 			colors: {
 				rocketRed: "#E62B4A",
+				rocketDarkRed: "#b62138",
 				rocketBlack: "#0A0A0A",
 				rocketWhite: "#FFFFFF",
 				border: 'hsl(var(--border))',
@@ -86,8 +87,8 @@ export default {
 					'50%': { transform: 'translateY(-20px)' }
 				},
 				'pulse-slow': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.7' }
+					'0%, 100%': { opacity: '0.2' },
+					'50%': { opacity: '0.5' }
 				},
 				'rocket-flame': {
 					'0%, 100%': { transform: 'scaleY(1)', opacity: '0.8' },
@@ -137,6 +138,10 @@ export default {
 				'rotate-slow': 'rotate-slow 20s linear infinite',
 				'shimmer': 'shimmer 3s ease-in-out infinite'
 			},
+			fontFamily: {
+				tajawal: ['Tajawal', 'sans-serif'],
+				cairo: ['Cairo', 'sans-serif'],
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
