@@ -34,14 +34,43 @@ function initNavbar() {
     });
   });
   
-  // Set active link based on current page
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Set active link based on current page with improved path detection
+  const currentPath = window.location.pathname;
+  const pageName = currentPath.split('/').pop() || 'index.html';
+  
   document.querySelectorAll('.nav-link').forEach(link => {
     const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage) {
+    
+    // Check if the current page matches the link or if it's the home page
+    if (linkHref === pageName) {
       link.classList.add('active');
-    } else if (currentPage === 'index.html' && linkHref === 'index.html') {
+    } else if (pageName === 'index.html' && linkHref === 'index.html') {
+      link.classList.add('active');
+    } else if (linkHref.includes('#') && pageName === linkHref.split('#')[0]) {
+      // Handle links with hash/fragment
       link.classList.add('active');
     }
+  });
+  
+  // Add smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        // Smooth scroll to the element
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Update URL without page reload
+        history.pushState(null, null, targetId);
+      }
+    });
   });
 }

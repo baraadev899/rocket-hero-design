@@ -25,6 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.querySelector('.team-member')) {
     initTeamMemberEffects();
   }
+  
+  // Initialize comments section if it exists
+  if (document.querySelector('.comments-section')) {
+    initCommentsSection();
+  }
+  
+  // Initialize portfolio navigation if it exists
+  if (document.querySelector('.portfolio-navigation')) {
+    initPortfolioNavigation();
+  }
 });
 
 // Code Particles Animation
@@ -162,7 +172,7 @@ function initPortfolioFilters() {
   });
 }
 
-// Contact Form
+// Contact Form with improved validation and feedback
 function initContactForm() {
   const contactForm = document.querySelector('.contact-form');
   
@@ -173,31 +183,85 @@ function initContactForm() {
     const formData = new FormData(contactForm);
     const formValues = Object.fromEntries(formData.entries());
     
-    // Simple validation
+    // Enhanced validation
     let isValid = true;
+    let firstInvalidField = null;
+    
     contactForm.querySelectorAll('[required]').forEach(field => {
       if (!field.value.trim()) {
         isValid = false;
         field.classList.add('invalid');
+        
+        // Store the first invalid field to focus on it
+        if (!firstInvalidField) {
+          firstInvalidField = field;
+        }
       } else {
         field.classList.remove('invalid');
+      }
+      
+      // Email validation if it's an email field
+      if (field.type === 'email' && field.value.trim()) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(field.value)) {
+          isValid = false;
+          field.classList.add('invalid');
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
+        }
       }
     });
     
     if (!isValid) {
-      alert('يرجى ملء جميع الحقول المطلوبة');
+      // Focus on the first invalid field
+      if (firstInvalidField) {
+        firstInvalidField.focus();
+      }
+      
+      // Show validation message
+      const validationMessage = document.createElement('div');
+      validationMessage.className = 'validation-message error';
+      validationMessage.textContent = 'يرجى ملء جميع الحقول المطلوبة بشكل صحيح';
+      
+      // Remove any existing validation messages
+      const existingMessage = contactForm.querySelector('.validation-message');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
+      
+      // Add the new message
+      contactForm.insertBefore(validationMessage, contactForm.firstChild);
+      
+      // Remove the message after 4 seconds
+      setTimeout(() => {
+        validationMessage.classList.add('fade-out');
+        setTimeout(() => {
+          validationMessage.remove();
+        }, 300);
+      }, 4000);
+      
       return;
     }
     
-    // Normally we would send this data to the server
-    // For demo purposes, just show success message
-    contactForm.innerHTML = `
-      <div class="form-success">
-        <div class="success-icon">✓</div>
-        <h3>شكراً لتواصلك معنا!</h3>
-        <p>تم استلام رسالتك بنجاح وسنرد عليك في أقرب وقت ممكن.</p>
-      </div>
-    `;
+    // Show loading indicator
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.innerHTML = '<span class="loading-spinner"></span> جاري الإرسال...';
+    submitButton.disabled = true;
+    
+    // Simulate server request
+    setTimeout(() => {
+      // Normally we would send this data to the server
+      // For demo purposes, just show success message
+      contactForm.innerHTML = `
+        <div class="form-success">
+          <div class="success-icon">✓</div>
+          <h3>شكراً لتواصلك معنا!</h3>
+          <p>تم استلام رسالتك بنجاح وسنرد عليك في أقرب وقت ممكن.</p>
+        </div>
+      `;
+    }, 1500);
   });
 }
 
@@ -237,3 +301,100 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check elements on scroll
   window.addEventListener('scroll', checkScroll);
 });
+
+// Comments Section Management
+function initCommentsSection() {
+  const commentsForm = document.querySelector('.comments-form');
+  const commentsList = document.querySelector('.comments-list');
+  
+  if (commentsForm) {
+    commentsForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const name = commentsForm.querySelector('#comment-name').value;
+      const email = commentsForm.querySelector('#comment-email').value;
+      const content = commentsForm.querySelector('#comment-content').value;
+      
+      if (!name || !email || !content) {
+        alert('يرجى ملء جميع الحقول المطلوبة');
+        return;
+      }
+      
+      // Create new comment
+      const newComment = document.createElement('div');
+      newComment.className = 'comment-item';
+      
+      // Get current date
+      const now = new Date();
+      const dateString = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+      
+      newComment.innerHTML = `
+        <div class="comment-author">
+          <div class="author-image">
+            <div class="default-avatar">${name.charAt(0)}</div>
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">${name}</h4>
+            <p class="comment-date">${dateString}</p>
+          </div>
+        </div>
+        <div class="comment-content">
+          <p>${content}</p>
+        </div>
+      `;
+      
+      // Add the comment to the list
+      commentsList.appendChild(newComment);
+      
+      // Reset form
+      commentsForm.reset();
+      
+      // Show success message
+      const successMessage = document.createElement('div');
+      successMessage.className = 'comment-success-message';
+      successMessage.textContent = 'تم إضافة تعليقك بنجاح';
+      commentsForm.appendChild(successMessage);
+      
+      // Remove success message after 3 seconds
+      setTimeout(() => {
+        successMessage.remove();
+      }, 3000);
+    });
+  }
+}
+
+// Portfolio Navigation
+function initPortfolioNavigation() {
+  const portfolioNavBtns = document.querySelectorAll('.portfolio-nav-btn');
+  
+  portfolioNavBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('data-target');
+      if (!targetId) return;
+      
+      // Hide all projects
+      document.querySelectorAll('.portfolio-project').forEach(project => {
+        project.style.display = 'none';
+      });
+      
+      // Show the target project
+      const targetProject = document.getElementById(targetId);
+      if (targetProject) {
+        targetProject.style.display = 'block';
+        
+        // Scroll to the project
+        targetProject.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      
+      // Update active button
+      portfolioNavBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+}
