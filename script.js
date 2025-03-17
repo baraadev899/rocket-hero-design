@@ -237,4 +237,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Check elements on scroll
   window.addEventListener('scroll', checkScroll);
+  
+  // Add Lovable script for template updates
+  const lovableScript = document.createElement('script');
+  lovableScript.src = 'https://cdn.gpteng.co/gptengineer.js';
+  lovableScript.type = 'module';
+  document.head.appendChild(lovableScript);
 });
