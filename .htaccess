@@ -1,0 +1,18 @@
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # توجيه API إلى ملفات PHP
+  RewriteRule ^api/(.*)$ admin/api/$1 [L]
+  
+  # منع الوصول المباشر لملفات PHP باستثناء API
+  RewriteCond %{REQUEST_URI} !/admin/api/ [NC]
+  RewriteRule ^admin/(.*)\.php$ - [F,L]
+  
+  # إعادة توجيه كل الطلبات غير الموجودة إلى index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule ^ index.html [L]
+</IfModule>

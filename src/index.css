@@ -1,7 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,45 +7,27 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 346 76% 53%; /* روكيت الأحمر */
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --ring: 346 76% 53%; /* روكيت الأحمر */
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
     
-    --rocket-red: 349 78% 53%;
-    --rocket-dark-red: 349 68% 42%;
+    --rocket-red: 346 76% 53%;
+    --rocket-dark-red: 346 70% 40%;
     --rocket-black: 0 0% 6%;
     --rocket-white: 0 0% 100%;
   }
@@ -56,7 +35,23 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    /* ... keep existing code (dark theme variables) */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 346 76% 53%; /* روكيت الأحمر */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 346 76% 53%; /* روكيت الأحمر */
   }
 }
 
@@ -64,173 +59,61 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* إضافة الخطوط العربية */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+@layer base {
+  html, body {
     font-family: 'Tajawal', 'Cairo', sans-serif;
-  }
-
-  /* RTL Support */
-  html[dir="rtl"] {
     direction: rtl;
-    text-align: right;
-  }
-
-  html[dir="rtl"] .ltr-only {
-    direction: ltr;
-    text-align: left;
   }
 }
 
-/* Custom Styles */
-.glass-effect {
-  @apply bg-opacity-10 backdrop-blur-lg bg-white border border-white border-opacity-20 shadow-lg;
-}
-
-.rtl-flip {
-  transform: scaleX(-1);
-}
-
-.text-gradient {
-  background: linear-gradient(45deg, hsl(var(--rocket-red)), hsl(348, 100%, 72%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(30deg);
-  transition: all 0.6s;
-}
-
-.btn-shine:hover::after {
-  transform: rotate(30deg) translateX(100%);
-}
-
-.code-text {
-  font-family: 'Courier New', monospace;
-}
-
+/* أنماط مخصصة للمشروع */
 @layer components {
-  .animated-button {
-    @apply relative overflow-hidden inline-flex items-center justify-center py-3 px-6 bg-[#E62B4A] hover:bg-[#b62138] text-white text-base font-medium border-none rounded-md cursor-pointer transition-all duration-300 transform origin-center;
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  .animated-button:hover {
-    @apply scale-105;
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-24;
   }
   
-  .animated-button:active {
-    @apply scale-95;
+  .heading-primary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
   }
   
-  .secondary-button {
-    @apply bg-transparent border border-[#E62B4A] text-white;
+  .heading-secondary {
+    @apply text-2xl md:text-3xl font-bold mb-3;
   }
   
-  .secondary-button:hover {
-    @apply bg-opacity-10 bg-[#E62B4A];
+  .heading-tertiary {
+    @apply text-xl md:text-2xl font-bold mb-2;
   }
-}
-
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out;
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent;
   }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-    animation-fill-mode: both;
-  }
-
-  .animate-scale-up {
-    animation: scaleUp 0.8s ease-out;
-  }
-
+  
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 3s ease-in-out infinite;
-  }
-  
-  .animate-rocket-flame {
-    animation: flame 0.8s ease-in-out infinite;
-  }
-  
-  .animate-rotate-slow {
-    animation: rotate 20s linear infinite;
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg;
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleUp {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
+/* تحريكات */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes flame {
-  0% {
-    height: 2.5rem;
-    opacity: 0.7;
-  }
-  100% {
-    height: 3rem;
-    opacity: 0.9;
-  }
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
