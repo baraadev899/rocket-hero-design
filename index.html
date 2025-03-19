@@ -4,172 +4,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>روكيت - شركة تطوير ويب وتطبيقات</title>
+    <title>روكيت - شركة تسويق إلكتروني وبرمجة</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="header-content">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container-custom">
+            <div class="navbar-content">
+                <!-- Logo -->
                 <a href="index.html" class="logo">
                     <span class="logo-text">روكيت</span>
                     <span class="logo-emoji">🚀</span>
                 </a>
-                
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html" class="active">الرئيسية</a></li>
-                        <li><a href="services.html">خدماتنا</a></li>
-                        <li><a href="portfolio.html">أعمالنا</a></li>
-                        <li><a href="team.html">فريقنا</a></li>
-                        <li><a href="contact.html">اتصل بنا</a></li>
-                    </ul>
+
+                <!-- Desktop Menu -->
+                <nav class="desktop-menu">
+                    <a href="index.html" class="menu-item active">الرئيسية</a>
+                    <a href="services.html" class="menu-item">خدماتنا</a>
+                    <a href="portfolio.html" class="menu-item">أعمالنا</a>
+                    <a href="team.html" class="menu-item">فريقنا</a>
+                    <a href="contact.html" class="menu-item">اتصل بنا</a>
                 </nav>
-                
-                <div class="header-btns">
-                    <a href="contact.html" class="btn btn-primary">احصل على عرض سعر</a>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger"></span>
-                    </button>
+
+                <!-- CTA Button -->
+                <div class="cta-container">
+                    <a href="contact.html" class="cta-button">احصل على عرض سعر</a>
                 </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="القائمة">
+                    <i class="fas fa-bars menu-icon"></i>
+                    <i class="fas fa-times close-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-menu-item active">الرئيسية</a>
+                    <a href="services.html" class="mobile-menu-item">خدماتنا</a>
+                    <a href="portfolio.html" class="mobile-menu-item">أعمالنا</a>
+                    <a href="team.html" class="mobile-menu-item">فريقنا</a>
+                    <a href="contact.html" class="mobile-menu-item">اتصل بنا</a>
+                    <a href="contact.html" class="mobile-cta-button">احصل على عرض سعر</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-list">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="services.html">خدماتنا</a></li>
-            <li><a href="portfolio.html">أعمالنا</a></li>
-            <li><a href="team.html">فريقنا</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary mobile-cta">احصل على عرض سعر</a>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
+        <div class="bg-elements">
+            <div class="gradient-bg"></div>
+            <div class="code-particles" id="codeParticles"></div>
+            <div class="abstract-shape shape-1"></div>
+            <div class="abstract-shape shape-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <div class="container-custom">
             <div class="hero-content">
+                <!-- Text Content -->
                 <div class="hero-text">
-                    <h1 class="hero-title">نطلق <span class="text-accent">إبداعاتك</span> نحو النجاح</h1>
-                    <p class="hero-description">نقدم حلول تقنية مبتكرة تساعد شركتك على النمو في العالم الرقمي مع تصميمات فريدة وتجربة مستخدم متميزة</p>
-                    <div class="hero-btns">
-                        <a href="contact.html" class="btn btn-primary btn-lg">ابدأ مشروعك</a>
-                        <a href="portfolio.html" class="btn btn-outline btn-lg">تصفح أعمالنا</a>
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>شركة تسويق إلكتروني وبرمجة</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span>نحول أفكارك إلى</span>
+                        <span class="text-gradient">واقع رقمي مبتكر</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        نساعدك على إطلاق مشروعك نحو النجاح من خلال حلول تسويقية مبتكرة وتقنيات برمجية متطورة. انضم إلى قائمة عملائنا المميزين واستمتع بخدمات احترافية تحقق أهدافك.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="animated-button">
+                            <span class="button-text">تواصل معنا الآن</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <a href="#services" class="text-link">
+                            <span>استكشف خدماتنا</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-highlights">
+                        <div class="service-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <p>تطوير المواقع</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <p>التسويق الرقمي</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Rocket Animation -->
                 <div class="hero-animation">
-                    <div class="rocket-animation" id="rocketAnimation">
-                        <div class="rocket">🚀</div>
-                        <div class="rocket-particles"></div>
+                    <div class="glass-card">
+                        <div class="rocket-container" id="rocketContainer">
+                            <div class="rocket">
+                                <i class="fas fa-rocket"></i>
+                                <div class="rocket-flame"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="decoration-dot dot-1"></div>
+                        <div class="decoration-dot dot-2"></div>
+                        <div class="decoration-dot dot-3"></div>
+                        <div class="decoration-dot dot-4"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-bg">
-            <canvas id="particlesCanvas"></canvas>
-        </div>
+        
+        <div class="hero-bottom-border"></div>
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
+    <section id="services" class="services-section">
+        <div class="container-custom">
             <div class="section-header">
-                <h2 class="section-title">خدماتنا</h2>
-                <p class="section-subtitle">نقدم مجموعة متكاملة من الخدمات الرقمية لنساعدك على النمو</p>
+                <h2 class="section-title">خدماتنا <span class="text-gradient">المميزة</span></h2>
+                <p class="section-description">نقدم باقة من الخدمات المتكاملة لتحويل مشروعك إلى قصة نجاح رقمية</p>
             </div>
+            
             <div class="services-grid" id="servicesGrid">
-                <!-- Services will be loaded here via JavaScript -->
-                <div class="services-loading">جاري تحميل الخدمات...</div>
+                <!-- Services will be loaded dynamically from PHP -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="container">
+    <section id="projects" class="projects-section">
+        <div class="container-custom">
             <div class="section-header">
-                <h2 class="section-title">أحدث أعمالنا</h2>
-                <p class="section-subtitle">مشاريع مميزة أنجزناها لعملائنا الكرام</p>
+                <h2 class="section-title">أحدث <span class="text-gradient">أعمالنا</span></h2>
+                <p class="section-description">نفخر بمجموعة متنوعة من المشاريع التي ساعدت عملائنا على تحقيق أهدافهم</p>
             </div>
+            
             <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded here via JavaScript -->
-                <div class="projects-loading">جاري تحميل المشاريع...</div>
+                <!-- Projects will be loaded dynamically from PHP -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
             </div>
-            <div class="section-footer">
-                <a href="portfolio.html" class="btn btn-outline">عرض جميع المشاريع</a>
+            
+            <div class="view-all-container">
+                <a href="portfolio.html" class="view-all-button">
+                    <span>عرض جميع الأعمال</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Team Section Snippet -->
-    <section class="team-section-snippet" id="teamSnippet">
-        <div class="container">
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container-custom">
             <div class="section-header">
-                <h2 class="section-title">فريقنا</h2>
-                <p class="section-subtitle">خبراء متخصصون يعملون معاً لإنجاح مشروعك</p>
+                <h2 class="section-title">فريق <span class="text-gradient">العمل</span></h2>
+                <p class="section-description">نخبة من المتخصصين ذوي الخبرة في مجالات البرمجة والتصميم والتسويق</p>
             </div>
-            <div class="team-slider" id="teamSlider">
-                <!-- Team members will be loaded here via JavaScript -->
-                <div class="team-loading">جاري تحميل الفريق...</div>
-            </div>
-            <div class="section-footer">
-                <a href="team.html" class="btn btn-outline">تعرف على فريقنا</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">الأسئلة الشائعة</h2>
-                <p class="section-subtitle">إجابات على استفساراتكم المتكررة</p>
-            </div>
-            <div class="faq-accordion" id="faqAccordion">
-                <!-- FAQs will be loaded here via JavaScript -->
-                <div class="faq-loading">جاري تحميل الأسئلة...</div>
+            
+            <div class="team-grid" id="teamGrid">
+                <!-- Team members will be loaded dynamically from PHP -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">جاهز لإطلاق مشروعك؟</h2>
-                <p class="cta-description">دعنا نساعدك في تحويل فكرتك إلى واقع رقمي مميز</p>
-                <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا الآن</a>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container-custom">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="contact-title">تواصل <span class="text-gradient">معنا</span></h2>
+                    <p class="contact-description">
+                        نحن هنا لمساعدتك في تحقيق أهدافك الرقمية. تواصل معنا اليوم للحصول على استشارة مجانية.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@rocketagency.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>رقم الهاتف</h3>
+                                <p>+966 123 456 789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>العنوان</h3>
+                                <p>الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            <span>إرسال الرسالة</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="container-custom">
             <div class="footer-content">
                 <div class="footer-info">
                     <a href="index.html" class="footer-logo">
-                        <span class="logo-text">روكيت</span>
+                        <span>روكيت</span>
                         <span class="logo-emoji">🚀</span>
                     </a>
-                    <p class="footer-description">نحن وكالة رقمية متخصصة في تقديم حلول تقنية مبتكرة تساعد العملاء على تحقيق أهدافهم</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p class="footer-description">
+                        شركة رائدة في مجال التسويق الإلكتروني وتطوير المواقع والتطبيقات، نسعى دائماً لتقديم حلول إبداعية لعملائنا.
+                    </p>
                 </div>
+                
                 <div class="footer-links">
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">روابط سريعة</h3>
-                        <ul class="footer-links-list">
+                        <h3 class="footer-title">روابط سريعة</h3>
+                        <ul class="footer-menu">
                             <li><a href="index.html">الرئيسية</a></li>
                             <li><a href="services.html">خدماتنا</a></li>
                             <li><a href="portfolio.html">أعمالنا</a></li>
@@ -177,30 +305,52 @@
                             <li><a href="contact.html">اتصل بنا</a></li>
                         </ul>
                     </div>
+                    
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">خدماتنا</h3>
-                        <ul class="footer-links-list" id="footerServicesList">
-                            <!-- Services links will be added here via JavaScript -->
-                            <li><a href="services.html">تصميم المواقع</a></li>
+                        <h3 class="footer-title">خدماتنا</h3>
+                        <ul class="footer-menu">
+                            <li><a href="services.html">تطوير المواقع</a></li>
                             <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">التسويق الرقمي</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3 class="footer-links-title">تواصل معنا</h3>
-                        <ul class="footer-contact-list" id="footerContactInfo">
-                            <li><i class="fas fa-map-marker-alt"></i> <span>القاهرة، مصر</span></li>
-                            <li><i class="fas fa-phone"></i> <span>+20 123 456 7890</span></li>
-                            <li><i class="fas fa-envelope"></i> <span>info@rocketagency.com</span></li>
+                            <li><a href="services.html">التسويق الإلكتروني</a></li>
+                            <li><a href="services.html">الهوية البصرية</a></li>
+                            <li><a href="services.html">تحسين محركات البحث</a></li>
                         </ul>
                     </div>
                 </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">اشترك في النشرة الإخبارية</h3>
+                    <p>اشترك للحصول على آخر الأخبار والعروض الخاصة</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p class="copyright">© <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة</p>
+                <p class="copyright">© 2023 روكيت. جميع الحقوق محفوظة.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+            </div>
+            <div class="toast-message" id="toastMessage"></div>
+        </div>
+        <button class="toast-close" id="toastClose"><i class="fas fa-times"></i></button>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>

@@ -1,69 +1,58 @@
-# Welcome to your Lovable project
 
-## Project info
+# روكيت - وكالة تسويق وبرمجة
 
-**URL**: https://lovable.dev/projects/e0180fed-82f2-4304-99f6-9f1e350ca1c7
+## نظرة عامة
+موقع "روكيت" هو موقع وكالة تسويق وبرمجة مبني باستخدام HTML, CSS, JavaScript, وPHP. الموقع يتمتع بتصميم متجاوب وخلفية حديثة.
 
-## How can I edit this code?
+## المتطلبات
+- سيرفر PHP (مثل XAMPP، WAMP، أو سيرفر استضافة يدعم PHP)
+- قاعدة بيانات MySQL
+- متصفح حديث
 
-There are several ways of editing your application.
+## التثبيت
+1. انسخ جميع الملفات إلى المجلد الجذر للسيرفر.
+2. قم بإنشاء قاعدة بيانات جديدة باسم `rocket_agency`.
+3. استورد ملف قاعدة البيانات `database/rocket_agency.sql` إلى قاعدة البيانات الجديدة.
+4. عدل بيانات الاتصال بقاعدة البيانات في ملف `api/config.php` إذا لزم الأمر:
+   ```php
+   $host = 'localhost';
+   $dbname = 'rocket_agency';
+   $username = 'root'; // قم بتغييره حسب إعدادات السيرفر
+   $password = ''; // قم بتغييره حسب إعدادات السيرفر
+   ```
+5. افتح المتصفح وانتقل إلى عنوان الموقع.
 
-**Use Lovable**
+## لوحة التحكم
+للوصول إلى لوحة التحكم:
+1. انتقل إلى `/admin`
+2. استخدم بيانات الدخول الافتراضية:
+   - البريد الإلكتروني: admin@rocket.com
+   - كلمة المرور: 123456
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e0180fed-82f2-4304-99f6-9f1e350ca1c7) and start prompting.
+## هيكل الملفات
+- `/index.html` - الصفحة الرئيسية
+- `/services.html` - صفحة الخدمات
+- `/contact.html` - صفحة الاتصال
+- `/assets/css/` - ملفات CSS
+- `/assets/js/` - ملفات JavaScript
+- `/api/` - نقاط نهاية API لجلب وإرسال البيانات
+- `/admin/` - لوحة تحكم المدير
 
-Changes made via Lovable will be committed automatically to this repo.
+## الميزات
+- تصميم متجاوب مع جميع أحجام الشاشات
+- تأثيرات الانتقال والرسوم المتحركة
+- نموذج اتصال مع التحقق من صحة الإدخال
+- عرض الخدمات والمشاريع وأعضاء الفريق ديناميكياً
+- رسائل التنبيه والإشعارات
+- لوحة تحكم لإدارة المحتوى
 
-**Use your preferred IDE**
+## تخصيص
+يمكنك تخصيص الموقع عن طريق:
+1. تعديل ملف `assets/css/style.css` لتغيير الألوان والتنسيق
+2. تعديل إعدادات الموقع من خلال لوحة التحكم
+3. تغيير الخلفيات والشعارات في مجلد `assets/images/`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e0180fed-82f2-4304-99f6-9f1e350ca1c7) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## الدعم
+إذا واجهتك أي مشكلة أو كان لديك أي استفسار، يمكنك التواصل معنا عبر:
+- البريد الإلكتروني: support@rocket.com
+- رقم الهاتف: +966 123 456 789

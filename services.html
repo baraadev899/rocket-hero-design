@@ -10,97 +10,144 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="header-content">
+    <!-- Navbar -->
+    <header class="navbar scrolled">
+        <div class="container-custom">
+            <div class="navbar-content">
+                <!-- Logo -->
                 <a href="index.html" class="logo">
                     <span class="logo-text">روكيت</span>
                     <span class="logo-emoji">🚀</span>
                 </a>
-                
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="services.html" class="active">خدماتنا</a></li>
-                        <li><a href="portfolio.html">أعمالنا</a></li>
-                        <li><a href="team.html">فريقنا</a></li>
-                        <li><a href="contact.html">اتصل بنا</a></li>
-                    </ul>
+
+                <!-- Desktop Menu -->
+                <nav class="desktop-menu">
+                    <a href="index.html" class="menu-item">الرئيسية</a>
+                    <a href="services.html" class="menu-item active">خدماتنا</a>
+                    <a href="portfolio.html" class="menu-item">أعمالنا</a>
+                    <a href="team.html" class="menu-item">فريقنا</a>
+                    <a href="contact.html" class="menu-item">اتصل بنا</a>
                 </nav>
-                
-                <div class="header-btns">
-                    <a href="contact.html" class="btn btn-primary">احصل على عرض سعر</a>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger"></span>
-                    </button>
+
+                <!-- CTA Button -->
+                <div class="cta-container">
+                    <a href="contact.html" class="cta-button">احصل على عرض سعر</a>
                 </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="القائمة">
+                    <i class="fas fa-bars menu-icon"></i>
+                    <i class="fas fa-times close-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-menu-item">الرئيسية</a>
+                    <a href="services.html" class="mobile-menu-item active">خدماتنا</a>
+                    <a href="portfolio.html" class="mobile-menu-item">أعمالنا</a>
+                    <a href="team.html" class="mobile-menu-item">فريقنا</a>
+                    <a href="contact.html" class="mobile-menu-item">اتصل بنا</a>
+                    <a href="contact.html" class="mobile-cta-button">احصل على عرض سعر</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-list">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="services.html">خدماتنا</a></li>
-            <li><a href="portfolio.html">أعمالنا</a></li>
-            <li><a href="team.html">فريقنا</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary mobile-cta">احصل على عرض سعر</a>
-    </div>
-
     <!-- Page Header -->
     <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">خدماتنا</h1>
-            <p class="page-subtitle">نقدم مجموعة متكاملة من الخدمات الرقمية لنساعدك على النمو</p>
+        <div class="container-custom">
+            <h1 class="page-title">خدماتنا <span class="text-gradient">المميزة</span></h1>
+            <p class="page-description">نقدم باقة متكاملة من الخدمات الرقمية لمساعدتك على تحقيق النجاح في عالم الأعمال الإلكترونية</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-page">
-        <div class="container">
-            <div class="services-list" id="servicesList">
-                <!-- Services will be loaded here via JavaScript -->
-                <div class="services-loading">جاري تحميل الخدمات...</div>
+    <!-- Services List -->
+    <section class="services-list-section">
+        <div class="container-custom">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded dynamically from PHP -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container-custom">
+            <div class="section-header">
+                <h2 class="section-title">لماذا <span class="text-gradient">تختارنا؟</span></h2>
+                <p class="section-description">نتميز بفريق محترف وخبرة واسعة في مجال تطوير المواقع والتسويق الرقمي</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">جودة عالية</h3>
+                    <p class="feature-description">نحرص على تقديم أعلى مستويات الجودة في كافة مشاريعنا، مع الاهتمام بأدق التفاصيل.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">التسليم في الموعد</h3>
+                    <p class="feature-description">نلتزم بتسليم المشاريع في المواعيد المحددة دون تأخير، مع الحفاظ على جودة العمل.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">فريق محترف</h3>
+                    <p class="feature-description">يضم فريقنا نخبة من المتخصصين في مجالات البرمجة والتصميم والتسويق الرقمي.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">دعم فني مستمر</h3>
+                    <p class="feature-description">نقدم دعماً فنياً متواصلاً لعملائنا، ونستجيب لاستفساراتهم وطلباتهم على مدار الساعة.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container-custom">
             <div class="cta-content">
-                <h2 class="cta-title">جاهز لإطلاق مشروعك؟</h2>
-                <p class="cta-description">دعنا نساعدك في تحويل فكرتك إلى واقع رقمي مميز</p>
-                <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا الآن</a>
+                <h2 class="cta-title">هل أنت جاهز لبدء مشروعك الرقمي؟</h2>
+                <p class="cta-description">تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
+                <a href="contact.html" class="cta-button-large">احصل على عرض سعر الآن</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="container-custom">
             <div class="footer-content">
                 <div class="footer-info">
                     <a href="index.html" class="footer-logo">
-                        <span class="logo-text">روكيت</span>
+                        <span>روكيت</span>
                         <span class="logo-emoji">🚀</span>
                     </a>
-                    <p class="footer-description">نحن وكالة رقمية متخصصة في تقديم حلول تقنية مبتكرة تساعد العملاء على تحقيق أهدافهم</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p class="footer-description">
+                        شركة رائدة في مجال التسويق الإلكتروني وتطوير المواقع والتطبيقات، نسعى دائماً لتقديم حلول إبداعية لعملائنا.
+                    </p>
                 </div>
+                
                 <div class="footer-links">
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">روابط سريعة</h3>
-                        <ul class="footer-links-list">
+                        <h3 class="footer-title">روابط سريعة</h3>
+                        <ul class="footer-menu">
                             <li><a href="index.html">الرئيسية</a></li>
                             <li><a href="services.html">خدماتنا</a></li>
                             <li><a href="portfolio.html">أعمالنا</a></li>
@@ -108,32 +155,41 @@
                             <li><a href="contact.html">اتصل بنا</a></li>
                         </ul>
                     </div>
+                    
                     <div class="footer-links-column">
-                        <h3 class="footer-links-title">خدماتنا</h3>
-                        <ul class="footer-links-list" id="footerServicesList">
-                            <!-- Services links will be added here via JavaScript -->
-                            <li><a href="services.html">تصميم المواقع</a></li>
+                        <h3 class="footer-title">خدماتنا</h3>
+                        <ul class="footer-menu">
+                            <li><a href="services.html">تطوير المواقع</a></li>
                             <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">التسويق الرقمي</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3 class="footer-links-title">تواصل معنا</h3>
-                        <ul class="footer-contact-list" id="footerContactInfo">
-                            <li><i class="fas fa-map-marker-alt"></i> <span>القاهرة، مصر</span></li>
-                            <li><i class="fas fa-phone"></i> <span>+20 123 456 7890</span></li>
-                            <li><i class="fas fa-envelope"></i> <span>info@rocketagency.com</span></li>
+                            <li><a href="services.html">التسويق الإلكتروني</a></li>
+                            <li><a href="services.html">الهوية البصرية</a></li>
+                            <li><a href="services.html">تحسين محركات البحث</a></li>
                         </ul>
                     </div>
                 </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">اشترك في النشرة الإخبارية</h3>
+                    <p>اشترك للحصول على آخر الأخبار والعروض الخاصة</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p class="copyright">© <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة</p>
+                <p class="copyright">© 2023 روكيت. جميع الحقوق محفوظة.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/services.js"></script>
 </body>
 </html>
