@@ -19,23 +19,42 @@ $stats = [];
 // Total messages
 $query = "SELECT COUNT(*) as total FROM messages";
 $result = $conn->query($query);
-$stats['total_messages'] = $result->fetch_assoc()['total'];
+$stats['total_messages'] = $result && $result->num_rows > 0 ? $result->fetch_assoc()['total'] : 0;
 
 // New messages (unread)
-$query = "SELECT COUNT(*) as total FROM messages WHERE status = 'unread'";
+$query = "SELECT COUNT(*) as total FROM messages WHERE is_read = 0";
 $result = $conn->query($query);
-$stats['new_messages'] = $result->fetch_assoc()['total'];
+$stats['new_messages'] = $result && $result->num_rows > 0 ? $result->fetch_assoc()['total'] : 0;
 
 // Total projects
 $query = "SELECT COUNT(*) as total FROM projects";
 $result = $conn->query($query);
-$stats['total_projects'] = $result->fetch_assoc()['total'];
+$stats['total_projects'] = $result && $result->num_rows > 0 ? $result->fetch_assoc()['total'] : 0;
 
 // Total team members
 $query = "SELECT COUNT(*) as total FROM team";
 $result = $conn->query($query);
-$stats['total_team'] = $result->fetch_assoc()['total'];
+$stats['total_team'] = $result && $result->num_rows > 0 ? $result->fetch_assoc()['total'] : 0;
 
+// Get recent messages
+$recent_messages = [];
+$query = "SELECT * FROM messages ORDER BY created_at DESC LIMIT 5";
+$result = $conn->query($query);
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $recent_messages[] = $row;
+    }
+}
+
+// Get recent projects
+$recent_projects = [];
+$query = "SELECT * FROM projects ORDER BY created_at DESC LIMIT 3";
+$result = $conn->query($query);
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $recent_projects[] = $row;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -95,7 +114,7 @@ $stats['total_team'] = $result->fetch_assoc()['total'];
             <header class="content-header">
                 <div class="header-title">
                     <h1>لوحة التحكم</h1>
-                    <p>مرحباً، <?php echo htmlspecialchars($_SESSION['admin_name']); ?>! هذه نظرة عامة على موقعك.</p>
+                    <p>مرحباً، <?php echo htmlspecialchars($_SESSION['admin_name'] ?? 'المسؤول'); ?>! هذه نظرة عامة على موقعك.</p>
                 </div>
                 
                 <div class="header-actions">
@@ -155,24 +174,21 @@ $stats['total_team'] = $result->fetch_assoc()['total'];
                 
                 <div class="activities-list">
                     <?php
-                    // Get recent messages
-                    $query = "SELECT * FROM messages ORDER BY created_at DESC LIMIT 5";
-                    $result = $conn->query($query);
-                    
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $date = date('Y-m-d H:i', strtotime($row['created_at']));
-                            $status_class = $row['status'] === 'unread' ? 'unread' : 'read';
+                    if (!empty($recent_messages)) {
+                        foreach ($recent_messages as $message) {
+                            $date = date('Y-m-d H:i', strtotime($message['created_at']));
+                            $status_class = $message['is_read'] ? 'read' : 'unread';
+                            $status_text = $message['is_read'] ? 'مقروءة' : 'غير مقروءة';
                             echo <<<HTML
                             <div class="activity-item">
                                 <div class="activity-icon message-icon">📩</div>
                                 <div class="activity-details">
-                                    <div class="activity-title">رسالة جديدة من {$row['name']}</div>
-                                    <div class="activity-subtitle">{$row['email']} - {$row['subject']}</div>
+                                    <div class="activity-title">رسالة جديدة من {$message['name']}</div>
+                                    <div class="activity-subtitle">{$message['email']}</div>
                                 </div>
                                 <div class="activity-meta">
                                     <span class="activity-time">{$date}</span>
-                                    <span class="activity-status {$status_class}">{$row['status']}</span>
+                                    <span class="activity-status {$status_class}">{$status_text}</span>
                                 </div>
                             </div>
                             HTML;
@@ -223,20 +239,17 @@ $stats['total_team'] = $result->fetch_assoc()['total'];
                     
                     <div class="recent-projects">
                         <?php
-                        // Get recent projects
-                        $query = "SELECT * FROM projects ORDER BY created_at DESC LIMIT 3";
-                        $result = $conn->query($query);
-                        
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
+                        if (!empty($recent_projects)) {
+                            foreach ($recent_projects as $project) {
+                                $image = isset($project['image']) && !empty($project['image']) ? $project['image'] : 'assets/images/project-placeholder.jpg';
                                 echo <<<HTML
                                 <div class="project-item">
                                     <div class="project-image">
-                                        <img src="../{$row['image']}" alt="{$row['title']}">
+                                        <img src="../{$image}" alt="{$project['title']}">
                                     </div>
                                     <div class="project-details">
-                                        <div class="project-title">{$row['title']}</div>
-                                        <div class="project-category">{$row['category']}</div>
+                                        <div class="project-title">{$project['title']}</div>
+                                        <div class="project-category">{$project['category']}</div>
                                     </div>
                                 </div>
                                 HTML;

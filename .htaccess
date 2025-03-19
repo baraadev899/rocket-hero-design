@@ -1,10 +1,17 @@
 
 RewriteEngine On
 
-# Redirect to index.html if file doesn't exist
+# Redirect to index.html if file doesn't exist (except for admin directory)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/admin/ [NC]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Admin panel special handling
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/admin/([^\.]+)$ [NC]
+RewriteRule ^admin/([^\.]+)$ admin/$1.php [NC,L]
 
 # Prevent direct access to PHP files (except API)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
@@ -24,3 +31,13 @@ Options -Indexes
 
 # Error pages
 ErrorDocument 404 /index.html
+
+# PHP settings
+<IfModule mod_php7.c>
+    php_flag display_errors On
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 256M
+    php_value post_max_size 32M
+    php_value upload_max_filesize 32M
+</IfModule>
