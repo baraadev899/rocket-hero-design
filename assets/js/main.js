@@ -117,9 +117,11 @@ function toggleMobileMenu() {
     if (mobileMenu.classList.contains('active')) {
         menuIcon.style.display = 'none';
         closeIcon.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     } else {
         menuIcon.style.display = 'block';
         closeIcon.style.display = 'none';
+        document.body.style.overflow = '';
     }
 }
 
@@ -147,22 +149,40 @@ async function fetchServices() {
     if (!servicesGrid) return;
     
     try {
+        servicesGrid.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+        
         const response = await fetch('api/services.php');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
         const services = await response.json();
+        
+        if (!Array.isArray(services) || services.length === 0) {
+            servicesGrid.innerHTML = '<p class="error-message">لا توجد خدمات متاحة حالياً</p>';
+            console.log('No services found or invalid response format:', services);
+            return;
+        }
+        
+        console.log('Fetched services:', services);
         
         servicesGrid.innerHTML = '';
         
-        services.forEach(service => {
+        // Only display first 3 or 6 services based on screen size
+        const displayCount = window.innerWidth >= 1024 ? Math.min(6, services.length) : Math.min(3, services.length);
+        const servicesToDisplay = services.slice(0, displayCount);
+        
+        servicesToDisplay.forEach(service => {
             const serviceCard = document.createElement('div');
             serviceCard.className = 'service-card';
             
             serviceCard.innerHTML = `
                 <div class="service-content">
                     <div class="service-icon">
-                        <i class="fas ${service.icon}"></i>
+                        <i class="fas ${service.icon || 'fa-rocket'}"></i>
                     </div>
                     <h3 class="service-title">${service.title}</h3>
-                    <p class="service-description">${service.description}</p>
+                    <p class="service-description">${service.description || service.short_description || ''}</p>
                     <a href="services.html" class="service-link">
                         <span>اعرف المزيد</span>
                         <i class="fas fa-arrow-left"></i>
@@ -316,4 +336,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial navbar state
     handleScroll();
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && mobileMenu.classList.contains('active') && 
+            !mobileMenu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Set active menu item based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref === currentPage || 
+            (currentPage === 'index.html' && itemHref === './') || 
+            (currentPage === '' && itemHref === './' || itemHref === 'index.html')) {
+            item.classList.add('active');
+        }
+    });
+    
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+    mobileMenuItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref === currentPage || 
+            (currentPage === 'index.html' && itemHref === './') || 
+            (currentPage === '' && itemHref === './' || itemHref === 'index.html')) {
+            item.classList.add('active');
+        }
+    });
 });

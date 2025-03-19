@@ -5,12 +5,29 @@ const servicesList = document.getElementById('servicesList');
 // Fetch Services Details
 async function fetchServicesDetails() {
     try {
-        const response = await fetch('admin/api/services.php');
-        const data = await response.json();
+        console.log('Fetching services details...');
+        // Show loading spinner
+        if (servicesList) {
+            servicesList.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+        }
         
-        if (data.success && data.data.length > 0) {
+        // Using the regular services API (not admin API)
+        const response = await fetch('api/services.php');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Services data received:', data);
+        
+        if (Array.isArray(data) && data.length > 0) {
+            return data;
+        } else if (data && data.data && Array.isArray(data.data) && data.data.length > 0) {
+            // Handle case where data is wrapped in a data property (from admin API)
             return data.data;
         }
+        
         return [];
     } catch (error) {
         console.error('Error fetching services:', error);
@@ -23,16 +40,17 @@ async function renderServicesDetails() {
     if (!servicesList) return;
     
     const services = await fetchServicesDetails();
+    console.log('Services to render:', services);
     
     if (services.length > 0) {
         servicesList.innerHTML = services.map((service, index) => `
             <div class="service-detail-item ${index % 2 === 0 ? '' : 'reverse'}">
                 <div class="service-detail-content">
                     <div class="service-icon">
-                        <i class="${service.icon || 'fas fa-rocket'}"></i>
+                        <i class="fas ${service.icon || 'fa-rocket'}"></i>
                     </div>
                     <h2 class="service-title">${service.title}</h2>
-                    <p class="service-description">${service.description || service.short_description}</p>
+                    <p class="service-description">${service.description || service.short_description || ''}</p>
                     <ul class="service-features">
                         ${service.features ? 
                             service.features.split(',').map(feature => `
@@ -55,5 +73,6 @@ async function renderServicesDetails() {
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Services page initialized');
     renderServicesDetails();
 });

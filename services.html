@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خدماتنا - روكيت</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/services.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -25,7 +30,7 @@
                     <a href="index.html" class="menu-item">الرئيسية</a>
                     <a href="services.html" class="menu-item active">خدماتنا</a>
                     <a href="portfolio.html" class="menu-item">أعمالنا</a>
-                    <a href="team.html" class="menu-item">فريقنا</a>
+                    <a href="about.html" class="menu-item">من نحن</a>
                     <a href="contact.html" class="menu-item">اتصل بنا</a>
                 </nav>
 
@@ -40,14 +45,14 @@
                     <i class="fas fa-times close-icon"></i>
                 </button>
             </div>
-
+            
             <!-- Mobile Menu -->
             <div class="mobile-menu">
                 <nav class="mobile-nav">
                     <a href="index.html" class="mobile-menu-item">الرئيسية</a>
                     <a href="services.html" class="mobile-menu-item active">خدماتنا</a>
                     <a href="portfolio.html" class="mobile-menu-item">أعمالنا</a>
-                    <a href="team.html" class="mobile-menu-item">فريقنا</a>
+                    <a href="about.html" class="mobile-menu-item">من نحن</a>
                     <a href="contact.html" class="mobile-menu-item">اتصل بنا</a>
                     <a href="contact.html" class="mobile-cta-button">احصل على عرض سعر</a>
                 </nav>
@@ -59,61 +64,19 @@
     <section class="page-header">
         <div class="container-custom">
             <h1 class="page-title">خدماتنا <span class="text-gradient">المميزة</span></h1>
-            <p class="page-description">نقدم باقة متكاملة من الخدمات الرقمية لمساعدتك على تحقيق النجاح في عالم الأعمال الإلكترونية</p>
+            <p class="page-subtitle">نقدم باقة متكاملة من الخدمات الرقمية لمساعدة عملك على النمو والوصول لجمهورك المستهدف</p>
         </div>
+        
+        <div class="header-decoration"></div>
     </section>
 
-    <!-- Services List -->
+    <!-- Services List Section -->
     <section class="services-list-section">
         <div class="container-custom">
-            <div class="services-grid" id="servicesGrid">
-                <!-- Services will be loaded dynamically from PHP -->
+            <div id="servicesList" class="services-list">
+                <!-- Services details will be loaded here -->
                 <div class="loading-spinner">
                     <div class="spinner"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-choose-us">
-        <div class="container-custom">
-            <div class="section-header">
-                <h2 class="section-title">لماذا <span class="text-gradient">تختارنا؟</span></h2>
-                <p class="section-description">نتميز بفريق محترف وخبرة واسعة في مجال تطوير المواقع والتسويق الرقمي</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 class="feature-title">جودة عالية</h3>
-                    <p class="feature-description">نحرص على تقديم أعلى مستويات الجودة في كافة مشاريعنا، مع الاهتمام بأدق التفاصيل.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="feature-title">التسليم في الموعد</h3>
-                    <p class="feature-description">نلتزم بتسليم المشاريع في المواعيد المحددة دون تأخير، مع الحفاظ على جودة العمل.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="feature-title">فريق محترف</h3>
-                    <p class="feature-description">يضم فريقنا نخبة من المتخصصين في مجالات البرمجة والتصميم والتسويق الرقمي.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="feature-title">دعم فني مستمر</h3>
-                    <p class="feature-description">نقدم دعماً فنياً متواصلاً لعملائنا، ونستجيب لاستفساراتهم وطلباتهم على مدار الساعة.</p>
                 </div>
             </div>
         </div>
@@ -123,9 +86,9 @@
     <section class="cta-section">
         <div class="container-custom">
             <div class="cta-content">
-                <h2 class="cta-title">هل أنت جاهز لبدء مشروعك الرقمي؟</h2>
-                <p class="cta-description">تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
-                <a href="contact.html" class="cta-button-large">احصل على عرض سعر الآن</a>
+                <h2 class="cta-title">مستعد لبدء مشروعك الرقمي القادم؟</h2>
+                <p class="cta-description">تواصل معنا الآن للحصول على استشارة مجانية ومناقشة تفاصيل مشروعك</p>
+                <a href="contact.html" class="cta-button-large">تواصل معنا الآن</a>
             </div>
         </div>
     </section>
@@ -135,42 +98,43 @@
         <div class="container-custom">
             <div class="footer-content">
                 <div class="footer-info">
-                    <a href="index.html" class="footer-logo">
+                    <div class="footer-logo">
                         <span>روكيت</span>
-                        <span class="logo-emoji">🚀</span>
-                    </a>
+                        <span>🚀</span>
+                    </div>
                     <p class="footer-description">
-                        شركة رائدة في مجال التسويق الإلكتروني وتطوير المواقع والتطبيقات، نسعى دائماً لتقديم حلول إبداعية لعملائنا.
+                        وكالة متخصصة في تطوير وتصميم المواقع والتطبيقات، نقدم حلولًا رقمية مبتكرة تساعد عملك على النمو.
                     </p>
                 </div>
                 
                 <div class="footer-links">
-                    <div class="footer-links-column">
+                    <div>
                         <h3 class="footer-title">روابط سريعة</h3>
                         <ul class="footer-menu">
                             <li><a href="index.html">الرئيسية</a></li>
                             <li><a href="services.html">خدماتنا</a></li>
                             <li><a href="portfolio.html">أعمالنا</a></li>
-                            <li><a href="team.html">فريقنا</a></li>
+                            <li><a href="about.html">من نحن</a></li>
                             <li><a href="contact.html">اتصل بنا</a></li>
                         </ul>
                     </div>
                     
-                    <div class="footer-links-column">
+                    <div>
                         <h3 class="footer-title">خدماتنا</h3>
                         <ul class="footer-menu">
-                            <li><a href="services.html">تطوير المواقع</a></li>
+                            <li><a href="services.html">تصميم المواقع</a></li>
                             <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">التسويق الإلكتروني</a></li>
-                            <li><a href="services.html">الهوية البصرية</a></li>
                             <li><a href="services.html">تحسين محركات البحث</a></li>
+                            <li><a href="services.html">التسويق الرقمي</a></li>
+                            <li><a href="services.html">إدارة وسائل التواصل</a></li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="footer-newsletter">
-                    <h3 class="footer-title">اشترك في النشرة الإخبارية</h3>
-                    <p>اشترك للحصول على آخر الأخبار والعروض الخاصة</p>
+                    <h3 class="footer-title">النشرة البريدية</h3>
+                    <p>اشترك في نشرتنا البريدية للحصول على آخر الأخبار والعروض</p>
+                    
                     <form class="newsletter-form">
                         <input type="email" placeholder="البريد الإلكتروني" required>
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -179,7 +143,10 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright">© 2023 روكيت. جميع الحقوق محفوظة.</p>
+                <p class="copyright">
+                    © <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة.
+                </p>
+                
                 <div class="footer-social">
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -190,6 +157,24 @@
         </div>
     </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+            </div>
+            <p id="toastMessage" class="toast-message"></p>
+        </div>
+        <button id="toastClose" class="toast-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Set current year for copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/services.js"></script>
 </body>
 </html>
