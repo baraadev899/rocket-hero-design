@@ -59,6 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $error_message = 'اسم المستخدم أو كلمة المرور غير صحيحة';
         }
+        
+        // For debugging
+        error_log("Login attempt: $username, Result: " . ($result->num_rows === 1 ? 'User found' : 'User not found'));
     }
 }
 ?>

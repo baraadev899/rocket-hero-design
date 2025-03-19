@@ -36,4 +36,19 @@ function successJson($data = null, $message = 'Operation successful') {
     }
     jsonResponse($response);
 }
+
+// Database helper functions
+function getAdminByUsername($conn, $username) {
+    $query = "SELECT * FROM admins WHERE username = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows === 1) {
+        return $result->fetch_assoc();
+    }
+    
+    return null;
+}
 ?>
