@@ -1,383 +1,207 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>روكيت - تسويق إلكتروني وبرمجة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Lovable script tag for template updates -->
-  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روكيت - شركة تطوير ويب وتطبيقات</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="navbar-content">
-        <a href="index.html" class="logo">
-          <span class="logo-text">روكيت</span>
-          <span class="logo-icon">🚀</span>
-        </a>
-        
-        <button id="menuToggle" class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        
-        <ul id="navMenu" class="nav-menu">
-          <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
-          <li><a href="about.html" class="nav-link">من نحن</a></li>
-          <li><a href="services.html" class="nav-link">خدماتنا</a></li>
-          <li><a href="portfolio.html" class="nav-link">أعمالنا</a></li>
-          <li><a href="team.html" class="nav-link">فريقنا</a></li>
-          <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">روكيت</span>
+                    <span class="logo-emoji">🚀</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="portfolio.html">أعمالنا</a></li>
+                        <li><a href="team.html">فريقنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-btns">
+                    <a href="contact.html" class="btn btn-primary">احصل على عرض سعر</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+            <li><a href="team.html">فريقنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-      </div>
+        <a href="contact.html" class="btn btn-primary mobile-cta">احصل على عرض سعر</a>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <!-- Background elements -->
-    <div class="hero-background">
-      <!-- Background gradient -->
-      <div class="bg-gradient"></div>
-      
-      <!-- Animated code particles -->
-      <canvas id="codeParticles" class="code-particles"></canvas>
-      
-      <!-- Abstract shapes -->
-      <div class="abstract-shape shape1"></div>
-      <div class="abstract-shape shape2"></div>
-      
-      <!-- Grid pattern -->
-      <div class="grid-pattern"></div>
-    </div>
-    
-    <div class="container">
-      <div class="hero-content">
-        <!-- Text Content -->
-        <div class="hero-text">
-          <div class="hero-badge">
-            <span class="icon">✨</span>
-            <span>شركة تسويق إلكتروني وبرمجة</span>
-          </div>
-          
-          <h1 class="hero-title">
-            <span>نحول أفكارك إلى</span>
-            <span class="text-gradient">واقع رقمي مبتكر</span>
-          </h1>
-          
-          <p class="hero-description">
-            نساعدك على إطلاق مشروعك نحو النجاح من خلال حلول تسويقية مبتكرة وتقنيات برمجية متطورة. انضم إلى قائمة عملائنا المميزين واستمتع بخدمات احترافية تحقق أهدافك.
-          </p>
-          
-          <div class="hero-actions">
-            <a href="contact.html" class="animated-button">
-              <span>تواصل معنا الآن</span>
-              <span class="icon">→</span>
-            </a>
-            
-            <a href="services.html" class="text-link">
-              <span>استكشف خدماتنا</span>
-              <span class="icon">←</span>
-            </a>
-          </div>
-          
-          <div class="hero-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <span>&lt;/&gt;</span>
-              </div>
-              <div class="feature-text">
-                <p>تطوير المواقع</p>
-              </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">نطلق <span class="text-accent">إبداعاتك</span> نحو النجاح</h1>
+                    <p class="hero-description">نقدم حلول تقنية مبتكرة تساعد شركتك على النمو في العالم الرقمي مع تصميمات فريدة وتجربة مستخدم متميزة</p>
+                    <div class="hero-btns">
+                        <a href="contact.html" class="btn btn-primary btn-lg">ابدأ مشروعك</a>
+                        <a href="portfolio.html" class="btn btn-outline btn-lg">تصفح أعمالنا</a>
+                    </div>
+                </div>
+                <div class="hero-animation">
+                    <div class="rocket-animation" id="rocketAnimation">
+                        <div class="rocket">🚀</div>
+                        <div class="rocket-particles"></div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="feature">
-              <div class="feature-icon">
-                <span>📊</span>
-              </div>
-              <div class="feature-text">
-                <p>التسويق الرقمي</p>
-              </div>
+        </div>
+        <div class="hero-bg">
+            <canvas id="particlesCanvas"></canvas>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتنا</h2>
+                <p class="section-subtitle">نقدم مجموعة متكاملة من الخدمات الرقمية لنساعدك على النمو</p>
             </div>
-          </div>
-        </div>
-        
-        <!-- Rocket Animation -->
-        <div class="hero-visual">
-          <div class="rocket-container">
-            <div class="rocket-effect"></div>
-            
-            <!-- Glassmorphism card -->
-            <div class="glass-card">
-              <div id="rocket" class="rocket">
-                <div class="rocket-body">🚀</div>
-                <div class="rocket-flame"></div>
-                <div class="rocket-glow"></div>
-              </div>
-              
-              <!-- Decorative elements -->
-              <div class="decorative-dot dot1"></div>
-              <div class="decorative-dot dot2"></div>
-              <div class="decorative-dot dot3"></div>
-              <div class="decorative-dot dot4"></div>
-              
-              <!-- Orbit circles -->
-              <div class="orbit orbit1"></div>
-              <div class="orbit orbit2"></div>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded here via JavaScript -->
+                <div class="services-loading">جاري تحميل الخدمات...</div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Bottom decorations -->
-    <div class="bottom-decoration"></div>
-  </div>
+    </section>
 
-  <!-- Services Section Preview -->
-  <section class="services-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">خدماتنا</span>
-        <h2 class="section-title">حلول رقمية <span class="text-gradient">إبداعية ومبتكرة</span></h2>
-        <p class="section-description">نقدم مجموعة متكاملة من الخدمات الاحترافية لتعزيز تواجدك الرقمي وتحقيق أهداف عملك</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <span>🖥️</span>
-          </div>
-          <h3 class="service-title">تصميم وتطوير المواقع</h3>
-          <p class="service-description">مواقع احترافية سريعة ومتوافقة مع جميع الأجهزة بتصاميم عصرية وجذابة.</p>
-          <a href="services.html" class="service-link">المزيد <span class="icon">←</span></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <span>📱</span>
-          </div>
-          <h3 class="service-title">تطبيقات الجوال</h3>
-          <p class="service-description">تطبيقات مخصصة لنظامي iOS وأندرويد بتجربة استخدام سلسة وأداء عالي.</p>
-          <a href="services.html" class="service-link">المزيد <span class="icon">←</span></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <span>📊</span>
-          </div>
-          <h3 class="service-title">التسويق الرقمي</h3>
-          <p class="service-description">استراتيجيات تسويقية متكاملة تعزز ظهورك وتزيد من انتشار علامتك التجارية.</p>
-          <a href="services.html" class="service-link">المزيد <span class="icon">←</span></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <span>🔍</span>
-          </div>
-          <h3 class="service-title">تحسين محركات البحث</h3>
-          <p class="service-description">تحسين ترتيب موقعك في نتائج البحث وزيادة الزيارات العضوية لموقعك.</p>
-          <a href="services.html" class="service-link">المزيد <span class="icon">←</span></a>
-        </div>
-      </div>
-      
-      <div class="section-cta">
-        <a href="services.html" class="animated-button secondary-button">
-          <span>عرض جميع الخدمات</span>
-          <span class="icon">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Preview Section -->
-  <section class="about-preview-section">
-    <div class="container">
-      <div class="about-preview-content">
-        <div class="about-preview-text">
-          <span class="section-badge">من نحن</span>
-          <h2 class="section-title">نبذة عن <span class="text-gradient">روكيت</span></h2>
-          <p class="about-description">
-            نحن شركة رائدة في مجال التسويق الإلكتروني وتطوير البرمجيات، نجمع بين الإبداع والتقنية لتقديم حلول رقمية متكاملة تساعد الشركات على النمو والتوسع في العالم الرقمي.
-          </p>
-          <ul class="about-features">
-            <li>
-              <span class="check-icon">✓</span>
-              أكثر من 5 سنوات من الخبرة في المجال الرقمي
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              فريق من المحترفين ذوي الخبرة والكفاءة العالية
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              أكثر من 100 مشروع ناجح مع عملاء من مختلف القطاعات
-            </li>
-          </ul>
-          <a href="about.html" class="animated-button secondary-button">
-            <span>اقرأ المزيد عنا</span>
-            <span class="icon">→</span>
-          </a>
-        </div>
-        <div class="about-preview-image">
-          <div class="glass-image-container">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="فريق روكيت">
-            <div class="image-decoration"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Preview -->
-  <section class="portfolio-preview-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">أعمالنا</span>
-        <h2 class="section-title">أحدث <span class="text-gradient">مشاريعنا</span></h2>
-        <p class="section-description">نفخر بتقديم مجموعة من المشاريع المميزة التي أنجزناها لعملائنا في مختلف المجالات</p>
-      </div>
-      
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="مشروع تصميم متجر إلكتروني">
-            <div class="portfolio-overlay">
-              <a href="portfolio.html" class="view-project">عرض التفاصيل</a>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أحدث أعمالنا</h2>
+                <p class="section-subtitle">مشاريع مميزة أنجزناها لعملائنا الكرام</p>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <span class="portfolio-category">تصميم متجر إلكتروني</span>
-            <h3 class="portfolio-title">متجر الأناقة</h3>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="تطبيق جوال لحجز المواعيد">
-            <div class="portfolio-overlay">
-              <a href="portfolio.html" class="view-project">عرض التفاصيل</a>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded here via JavaScript -->
+                <div class="projects-loading">جاري تحميل المشاريع...</div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <span class="portfolio-category">تطبيق جوال</span>
-            <h3 class="portfolio-title">تطبيق حجز المواعيد</h3>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="حملة تسويقية لشركة عقارات">
-            <div class="portfolio-overlay">
-              <a href="portfolio.html" class="view-project">عرض التفاصيل</a>
+            <div class="section-footer">
+                <a href="portfolio.html" class="btn btn-outline">عرض جميع المشاريع</a>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <span class="portfolio-category">تسويق رقمي</span>
-            <h3 class="portfolio-title">حملة شركة العقارات المتحدة</h3>
-          </div>
         </div>
-      </div>
-      
-      <div class="section-cta">
-        <a href="portfolio.html" class="animated-button secondary-button">
-          <span>عرض جميع المشاريع</span>
-          <span class="icon">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">جاهز لبدء مشروعك الرقمي؟</h2>
-        <p class="cta-description">تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
-        <a href="contact.html" class="animated-button cta-button">
-          <span>ابدأ الآن</span>
-          <span class="icon">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <a href="index.html" class="footer-logo">
-            <span class="logo-text">روكيت</span>
-            <span class="logo-icon">🚀</span>
-          </a>
-          <p class="footer-description">
-            نقدم حلول رقمية متكاملة للشركات والأفراد لمساعدتهم على تحقيق أهدافهم وتوسيع نطاق أعمالهم.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"><span>فيسبوك</span></a>
-            <a href="#" class="social-link"><span>تويتر</span></a>
-            <a href="#" class="social-link"><span>انستغرام</span></a>
-            <a href="#" class="social-link"><span>لينكد إن</span></a>
-          </div>
+    <!-- Team Section Snippet -->
+    <section class="team-section-snippet" id="teamSnippet">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">فريقنا</h2>
+                <p class="section-subtitle">خبراء متخصصون يعملون معاً لإنجاح مشروعك</p>
+            </div>
+            <div class="team-slider" id="teamSlider">
+                <!-- Team members will be loaded here via JavaScript -->
+                <div class="team-loading">جاري تحميل الفريق...</div>
+            </div>
+            <div class="section-footer">
+                <a href="team.html" class="btn btn-outline">تعرف على فريقنا</a>
+            </div>
         </div>
-        
-        <div class="footer-links">
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">روابط سريعة</h3>
-            <ul class="footer-menu">
-              <li><a href="index.html">الرئيسية</a></li>
-              <li><a href="about.html">من نحن</a></li>
-              <li><a href="services.html">خدماتنا</a></li>
-              <li><a href="portfolio.html">أعمالنا</a></li>
-              <li><a href="team.html">فريقنا</a></li>
-              <li><a href="contact.html">تواصل معنا</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">خدماتنا</h3>
-            <ul class="footer-menu">
-              <li><a href="services.html">تصميم المواقع</a></li>
-              <li><a href="services.html">تطوير التطبيقات</a></li>
-              <li><a href="services.html">التسويق الرقمي</a></li>
-              <li><a href="services.html">تحسين محركات البحث</a></li>
-              <li><a href="services.html">إدارة وسائل التواصل</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">تواصل معنا</h3>
-            <ul class="contact-info">
-              <li>
-                <span class="contact-icon">📍</span>
-                <span>الرياض، المملكة العربية السعودية</span>
-              </li>
-              <li>
-                <span class="contact-icon">📞</span>
-                <span>+966 123 456 789</span>
-              </li>
-              <li>
-                <span class="contact-icon">📧</span>
-                <span>info@rocket-agency.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="copyright">جميع الحقوق محفوظة &copy; 2023 شركة روكيت للتسويق الإلكتروني والبرمجة</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-  <script src="navbar.js"></script>
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات على استفساراتكم المتكررة</p>
+            </div>
+            <div class="faq-accordion" id="faqAccordion">
+                <!-- FAQs will be loaded here via JavaScript -->
+                <div class="faq-loading">جاري تحميل الأسئلة...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">جاهز لإطلاق مشروعك؟</h2>
+                <p class="cta-description">دعنا نساعدك في تحويل فكرتك إلى واقع رقمي مميز</p>
+                <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">روكيت</span>
+                        <span class="logo-emoji">🚀</span>
+                    </a>
+                    <p class="footer-description">نحن وكالة رقمية متخصصة في تقديم حلول تقنية مبتكرة تساعد العملاء على تحقيق أهدافهم</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">روابط سريعة</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="services.html">خدماتنا</a></li>
+                            <li><a href="portfolio.html">أعمالنا</a></li>
+                            <li><a href="team.html">فريقنا</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">خدماتنا</h3>
+                        <ul class="footer-links-list" id="footerServicesList">
+                            <!-- Services links will be added here via JavaScript -->
+                            <li><a href="services.html">تصميم المواقع</a></li>
+                            <li><a href="services.html">تطوير التطبيقات</a></li>
+                            <li><a href="services.html">التسويق الرقمي</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">تواصل معنا</h3>
+                        <ul class="footer-contact-list" id="footerContactInfo">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>القاهرة، مصر</span></li>
+                            <li><i class="fas fa-phone"></i> <span>+20 123 456 7890</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>info@rocketagency.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

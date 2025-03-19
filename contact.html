@@ -2,367 +2,225 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معنا - روكيت للتسويق الإلكتروني والبرمجة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Lovable script tag for template updates -->
-  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - روكيت</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="navbar-content">
-        <a href="index.html" class="logo">
-          <span class="logo-text">روكيت</span>
-          <span class="logo-icon">🚀</span>
-        </a>
-        
-        <button id="menuToggle" class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        
-        <ul id="navMenu" class="nav-menu">
-          <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-          <li><a href="about.html" class="nav-link">من نحن</a></li>
-          <li><a href="services.html" class="nav-link">خدماتنا</a></li>
-          <li><a href="portfolio.html" class="nav-link">أعمالنا</a></li>
-          <li><a href="team.html" class="nav-link">فريقنا</a></li>
-          <li><a href="contact.html" class="nav-link active">تواصل معنا</a></li>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">روكيت</span>
+                    <span class="logo-emoji">🚀</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="portfolio.html">أعمالنا</a></li>
+                        <li><a href="team.html">فريقنا</a></li>
+                        <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-btns">
+                    <a href="contact.html" class="btn btn-primary">احصل على عرض سعر</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+            <li><a href="team.html">فريقنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-      </div>
+        <a href="contact.html" class="btn btn-primary mobile-cta">احصل على عرض سعر</a>
     </div>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="page-header">
-    <div class="container">
-      <h1 class="page-title">تواصل معنا</h1>
-      <div class="breadcrumb">
-        <a href="index.html">الرئيسية</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="current-page">تواصل معنا</span>
-      </div>
-    </div>
-    <div class="header-decoration"></div>
-  </div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">اتصل بنا</h1>
+            <p class="page-subtitle">نحن هنا للإجابة على استفساراتك وتحويل أفكارك إلى واقع</p>
+        </div>
+    </section>
 
-  <!-- Contact Info -->
-  <section class="contact-info-section">
-    <div class="container">
-      <div class="section-header centered animate-on-scroll">
-        <span class="section-badge">اتصل بنا</span>
-        <h2 class="section-title">نحن هنا <span class="text-gradient">لمساعدتك</span></h2>
-        <p class="section-description">
-          يسعدنا التواصل معك والإجابة على استفساراتك. يمكنك الاتصال بنا مباشرة أو إرسال رسالة من خلال النموذج أدناه.
-        </p>
-      </div>
-      
-      <div class="contact-info-grid animate-on-scroll">
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <span>📍</span>
-          </div>
-          <h3 class="contact-info-title">العنوان</h3>
-          <p class="contact-info-text">
-            الرياض، المملكة العربية السعودية<br>
-            طريق الملك فهد، برج المملكة، الطابق 20
-          </p>
-        </div>
-        
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <span>📞</span>
-          </div>
-          <h3 class="contact-info-title">رقم الهاتف</h3>
-          <p class="contact-info-text">
-            +966 123 456 789<br>
-            +966 987 654 321
-          </p>
-        </div>
-        
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <span>📧</span>
-          </div>
-          <h3 class="contact-info-title">البريد الإلكتروني</h3>
-          <p class="contact-info-text">
-            info@rocket-agency.com<br>
-            support@rocket-agency.com
-          </p>
-        </div>
-        
-        <div class="contact-info-card">
-          <div class="contact-info-icon">
-            <span>⏱️</span>
-          </div>
-          <h3 class="contact-info-title">ساعات العمل</h3>
-          <p class="contact-info-text">
-            الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً<br>
-            الجمعة - السبت: مغلق
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form and Map -->
-  <section class="contact-form-section">
-    <div class="container">
-      <div class="contact-form-container">
-        <div class="contact-form-wrapper animate-on-scroll">
-          <h3 class="contact-form-title">أرسل لنا رسالة</h3>
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name">الاسم الكامل</label>
-              <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">البريد الإلكتروني</label>
-              <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="phone">رقم الهاتف</label>
-              <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك">
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">الموضوع</label>
-              <input type="text" id="subject" name="subject" placeholder="أدخل موضوع الرسالة" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">الرسالة</label>
-              <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
-            </div>
-            
-            <button type="submit" class="animated-button">
-              <span>إرسال الرسالة</span>
-              <span class="icon">→</span>
-            </button>
-          </form>
-        </div>
-        
-        <div class="contact-map animate-on-scroll">
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.6763621597703!2d46.68536911536867!3d24.711451284132255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3ade4083281%3A0xc87b3e0ff8ee429f!2z2KjYsdisINin2YTZhdmF2YTZg9ipINin2YTYqtis2KfYsdmK!5e0!3m2!1sar!2ssa!4v1632126080654!5m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comments Section -->
-  <section class="comments-section">
-    <div class="container">
-      <div class="section-header centered animate-on-scroll">
-        <span class="section-badge">آراء العملاء</span>
-        <h2 class="section-title">شاركنا <span class="text-gradient">رأيك</span></h2>
-        <p class="section-description">
-          نحن نقدر آراء عملائنا ونسعى دائماً للتحسين المستمر. شارك معنا تجربتك أو اقتراحاتك.
-        </p>
-      </div>
-      
-      <div class="comments-container animate-on-scroll">
-        <div class="comments-form-container">
-          <h3 class="comments-form-title">إضافة تعليق</h3>
-          <form class="comments-form">
-            <div class="form-group">
-              <label for="comment-name">الاسم</label>
-              <input type="text" id="comment-name" name="name" placeholder="أدخل اسمك" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="comment-email">البريد الإلكتروني</label>
-              <input type="email" id="comment-email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="comment-content">التعليق</label>
-              <textarea id="comment-content" name="content" rows="4" placeholder="اكتب تعليقك هنا" required></textarea>
-            </div>
-            
-            <button type="submit" class="animated-button secondary-button">
-              <span>إضافة تعليق</span>
-              <span class="icon">→</span>
-            </button>
-          </form>
-        </div>
-        
-        <div class="comments-list-container">
-          <h3 class="comments-list-title">التعليقات</h3>
-          <div class="comments-list">
-            <div class="comment-item">
-              <div class="comment-author">
-                <div class="author-image">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمد السعيد">
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>معلومات التواصل</h2>
+                    <p>نرحب بتواصلكم معنا في أي وقت. فريقنا جاهز للرد على استفساراتكم وتقديم المساعدة اللازمة.</p>
+                    
+                    <div class="contact-details" id="contactDetails">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>العنوان</h3>
+                                <p>القاهرة، مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>الهاتف</h3>
+                                <p>+20 123 456 7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@rocketagency.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>ساعات العمل</h3>
+                                <p>السبت - الخميس: 9 ص - 5 م</p>
+                                <p>الجمعة: مغلق</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3>تابعنا على</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="author-info">
-                  <h4 class="author-name">محمد السعيد</h4>
-                  <p class="comment-date">15/6/2023</p>
+                
+                <div class="contact-form-wrapper">
+                    <h2>أرسل رسالة</h2>
+                    <p>يمكنك إرسال استفسارك أو طلب عرض سعر من خلال النموذج التالي</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">إرسال الرسالة</button>
+                    </form>
+                    
+                    <div id="formMessage" class="form-message"></div>
                 </div>
-              </div>
-              <div class="comment-content">
-                <p>
-                  تجربتي مع فريق روكيت كانت رائعة! استجابوا لجميع طلباتي بسرعة واحترافية عالية. أنصح بالتعامل معهم.
-                </p>
-              </div>
             </div>
-            
-            <div class="comment-item">
-              <div class="comment-author">
-                <div class="author-image">
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="سارة الأحمد">
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">روكيت</span>
+                        <span class="logo-emoji">🚀</span>
+                    </a>
+                    <p class="footer-description">نحن وكالة رقمية متخصصة في تقديم حلول تقنية مبتكرة تساعد العملاء على تحقيق أهدافهم</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="author-info">
-                  <h4 class="author-name">سارة الأحمد</h4>
-                  <p class="comment-date">3/7/2023</p>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">روابط سريعة</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="services.html">خدماتنا</a></li>
+                            <li><a href="portfolio.html">أعمالنا</a></li>
+                            <li><a href="team.html">فريقنا</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">خدماتنا</h3>
+                        <ul class="footer-links-list" id="footerServicesList">
+                            <!-- Services links will be added here via JavaScript -->
+                            <li><a href="services.html">تصميم المواقع</a></li>
+                            <li><a href="services.html">تطوير التطبيقات</a></li>
+                            <li><a href="services.html">التسويق الرقمي</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">تواصل معنا</h3>
+                        <ul class="footer-contact-list" id="footerContactInfo">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>القاهرة، مصر</span></li>
+                            <li><i class="fas fa-phone"></i> <span>+20 123 456 7890</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>info@rocketagency.com</span></li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <div class="comment-content">
-                <p>
-                  موقع احترافي وسهل الاستخدام. الخدمة ممتازة والفريق متعاون جداً. شكراً لكم!
-                </p>
-              </div>
             </div>
-          </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-header centered animate-on-scroll">
-        <span class="section-badge">الأسئلة الشائعة</span>
-        <h2 class="section-title">أسئلة <span class="text-gradient">متكررة</span></h2>
-      </div>
-      
-      <div class="faq-container animate-on-scroll">
-        <div class="faq-item">
-          <div class="faq-question">ما هي مدة تنفيذ المشروع؟</div>
-          <div class="faq-answer">
-            <p>تختلف مدة تنفيذ المشروع حسب حجمه وتعقيده، ولكن بشكل عام تتراوح المدة بين 2-8 أسابيع. نقوم بتحديد الجدول الزمني المناسب بعد دراسة متطلبات المشروع بالتفصيل.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">كيف يمكنني متابعة تقدم المشروع؟</div>
-          <div class="faq-answer">
-            <p>نوفر تقارير دورية عن سير العمل في المشروع، كما نستخدم منصات إدارة المشاريع التي تتيح لك متابعة التقدم بشكل مستمر والاطلاع على آخر التطورات.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">هل تقدمون خدمات الصيانة بعد إطلاق المشروع؟</div>
-          <div class="faq-answer">
-            <p>نعم، نقدم خدمات الصيانة والدعم الفني المستمر لجميع المشاريع، ويمكنك الاختيار بين باقات الصيانة الشهرية أو السنوية حسب احتياجاتك.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">ما هي تكلفة الخدمات؟</div>
-          <div class="faq-answer">
-            <p>تختلف التكاليف حسب نوع الخدمة وحجم المشروع ومتطلباته. يمكنك التواصل معنا للحصول على عرض سعر مفصل بعد تحديد احتياجاتك بدقة.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">جاهز لبدء مشروعك الرقمي؟</h2>
-        <p class="cta-description">تواصل معنا اليوم للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
-        <a href="#" class="animated-button cta-button">
-          <span>ابدأ الآن</span>
-          <span class="icon">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <a href="index.html" class="footer-logo">
-            <span class="logo-text">روكيت</span>
-            <span class="logo-icon">🚀</span>
-          </a>
-          <p class="footer-description">
-            نقدم حلول رقمية متكاملة للشركات والأفراد لمساعدتهم على تحقيق أهدافهم وتوسيع نطاق أعمالهم.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"><span>فيسبوك</span></a>
-            <a href="#" class="social-link"><span>تويتر</span></a>
-            <a href="#" class="social-link"><span>انستغرام</span></a>
-            <a href="#" class="social-link"><span>لينكد إن</span></a>
-          </div>
-        </div>
-        
-        <div class="footer-links">
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">روابط سريعة</h3>
-            <ul class="footer-menu">
-              <li><a href="index.html">الرئيسية</a></li>
-              <li><a href="about.html">من نحن</a></li>
-              <li><a href="services.html">خدماتنا</a></li>
-              <li><a href="portfolio.html">أعمالنا</a></li>
-              <li><a href="team.html">فريقنا</a></li>
-              <li><a href="contact.html">تواصل معنا</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">خدماتنا</h3>
-            <ul class="footer-menu">
-              <li><a href="services.html">تصميم المواقع</a></li>
-              <li><a href="services.html">تطوير التطبيقات</a></li>
-              <li><a href="services.html">التسويق الرقمي</a></li>
-              <li><a href="services.html">تحسين محركات البحث</a></li>
-              <li><a href="services.html">إدارة وسائل التواصل</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">تواصل معنا</h3>
-            <ul class="contact-info">
-              <li>
-                <span class="contact-icon">📍</span>
-                <span>الرياض، المملكة العربية السعودية</span>
-              </li>
-              <li>
-                <span class="contact-icon">📞</span>
-                <span>+966 123 456 789</span>
-              </li>
-              <li>
-                <span class="contact-icon">📧</span>
-                <span>info@rocket-agency.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="copyright">جميع الحقوق محفوظة &copy; 2023 شركة روكيت للتسويق الإلكتروني والبرمجة</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="navbar.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>

@@ -3,16 +3,32 @@
   RewriteEngine On
   RewriteBase /
   
-  # توجيه API إلى ملفات PHP
-  RewriteRule ^api/(.*)$ admin/api/$1 [L]
+  # Redirect API requests to PHP files
+  RewriteRule ^admin/api/(.*)$ admin/api/$1 [L]
   
-  # منع الوصول المباشر لملفات PHP باستثناء API
+  # Protect non-API PHP files
   RewriteCond %{REQUEST_URI} !/admin/api/ [NC]
   RewriteRule ^admin/(.*)\.php$ - [F,L]
   
-  # إعادة توجيه كل الطلبات غير الموجودة إلى index.html
+  # Serve HTML files for main routes
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule ^ index.html [L]
+  RewriteRule ^([^/]+)/?$ $1.html [L]
+  
+  # Default index file
+  DirectoryIndex index.html
 </IfModule>
+
+# Enable CORS
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom error pages
+ErrorDocument 404 /index.html

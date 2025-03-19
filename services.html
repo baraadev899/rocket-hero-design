@@ -2,398 +2,138 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خدماتنا - روكيت للتسويق الإلكتروني والبرمجة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا - روكيت</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="navbar-content">
-        <a href="index.html" class="logo">
-          <span class="logo-text">روكيت</span>
-          <span class="logo-icon">🚀</span>
-        </a>
-        
-        <button id="menuToggle" class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        
-        <ul id="navMenu" class="nav-menu">
-          <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-          <li><a href="about.html" class="nav-link">من نحن</a></li>
-          <li><a href="services.html" class="nav-link active">خدماتنا</a></li>
-          <li><a href="portfolio.html" class="nav-link">أعمالنا</a></li>
-          <li><a href="team.html" class="nav-link">فريقنا</a></li>
-          <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">روكيت</span>
+                    <span class="logo-emoji">🚀</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html" class="active">خدماتنا</a></li>
+                        <li><a href="portfolio.html">أعمالنا</a></li>
+                        <li><a href="team.html">فريقنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-btns">
+                    <a href="contact.html" class="btn btn-primary">احصل على عرض سعر</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+            <li><a href="team.html">فريقنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-      </div>
+        <a href="contact.html" class="btn btn-primary mobile-cta">احصل على عرض سعر</a>
     </div>
-  </nav>
 
-  <!-- Page Header -->
-  <div class="page-header">
-    <div class="container">
-      <h1 class="page-title">خدماتنا</h1>
-      <div class="breadcrumb">
-        <a href="index.html">الرئيسية</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="current-page">خدماتنا</span>
-      </div>
-    </div>
-    <div class="header-decoration"></div>
-  </div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">خدماتنا</h1>
+            <p class="page-subtitle">نقدم مجموعة متكاملة من الخدمات الرقمية لنساعدك على النمو</p>
+        </div>
+    </section>
 
-  <!-- Services Intro -->
-  <section class="services-intro">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-badge">خدماتنا</span>
-        <h2 class="section-title">حلول متكاملة <span class="text-gradient">لنجاح مشروعك الرقمي</span></h2>
-        <p class="section-description">
-          نقدم مجموعة شاملة من الخدمات الاحترافية في مجالات التسويق الإلكتروني وتطوير البرمجيات، مصممة خصيصاً لتلبية احتياجات عملك وتحقيق أهدافك.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- Services Section -->
+    <section class="services-page">
+        <div class="container">
+            <div class="services-list" id="servicesList">
+                <!-- Services will be loaded here via JavaScript -->
+                <div class="services-loading">جاري تحميل الخدمات...</div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Main Services -->
-  <section class="main-services">
-    <div class="container">
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>🖥️</span>
-          </div>
-          <h3 class="service-title">تصميم وتطوير المواقع</h3>
-          <p class="service-description">
-            نصمم ونطور مواقع إلكترونية احترافية بتصاميم عصرية وجذابة، مع التركيز على تجربة المستخدم وسرعة التحميل والتوافق مع جميع الأجهزة.
-          </p>
-          <ul class="service-features">
-            <li>تصميم مواقع متجاوبة مع جميع الأجهزة</li>
-            <li>تطوير مواقع ديناميكية بأحدث التقنيات</li>
-            <li>تحسين تجربة المستخدم وسهولة الاستخدام</li>
-            <li>تطوير متاجر إلكترونية متكاملة</li>
-            <li>تطوير أنظمة إدارة المحتوى المخصصة</li>
-          </ul>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">جاهز لإطلاق مشروعك؟</h2>
+                <p class="cta-description">دعنا نساعدك في تحويل فكرتك إلى واقع رقمي مميز</p>
+                <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا الآن</a>
+            </div>
         </div>
-        
-        <!-- Service 2 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>📱</span>
-          </div>
-          <h3 class="service-title">تطوير تطبيقات الجوال</h3>
-          <p class="service-description">
-            نطور تطبيقات جوال احترافية لنظامي iOS وأندرويد، بتجربة استخدام سلسة وأداء عالي، مع التركيز على تلبية احتياجات المستخدمين وأهداف العمل.
-          </p>
-          <ul class="service-features">
-            <li>تطوير تطبيقات iOS وأندرويد</li>
-            <li>تطوير تطبيقات هجينة متعددة المنصات</li>
-            <li>تصميم واجهات مستخدم سهلة الاستخدام</li>
-            <li>دمج خدمات API والخدمات السحابية</li>
-            <li>صيانة وتحديث مستمر للتطبيقات</li>
-          </ul>
-        </div>
-        
-        <!-- Service 3 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>📊</span>
-          </div>
-          <h3 class="service-title">التسويق الرقمي</h3>
-          <p class="service-description">
-            نقدم استراتيجيات تسويقية متكاملة تساعد على زيادة الوعي بعلامتك التجارية وجذب العملاء المحتملين وزيادة المبيعات.
-          </p>
-          <ul class="service-features">
-            <li>إدارة حملات إعلانية مدفوعة</li>
-            <li>التسويق عبر وسائل التواصل الاجتماعي</li>
-            <li>التسويق بالمحتوى واستراتيجيات المحتوى</li>
-            <li>البريد الإلكتروني التسويقي</li>
-            <li>تحليل البيانات وإعداد التقارير</li>
-          </ul>
-        </div>
-        
-        <!-- Service 4 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>🔍</span>
-          </div>
-          <h3 class="service-title">تحسين محركات البحث</h3>
-          <p class="service-description">
-            نساعدك على تحسين ترتيب موقعك في نتائج البحث وزيادة الزيارات العضوية من خلال استراتيجيات SEO الفعالة والمتوافقة مع أحدث خوارزميات البحث.
-          </p>
-          <ul class="service-features">
-            <li>تحليل الكلمات المفتاحية واستراتيجية المحتوى</li>
-            <li>تحسين العوامل التقنية للموقع</li>
-            <li>بناء الروابط الخلفية عالية الجودة</li>
-            <li>تحسين تجربة المستخدم</li>
-            <li>تحليل ومتابعة الأداء المستمر</li>
-          </ul>
-        </div>
-        
-        <!-- Service 5 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>💬</span>
-          </div>
-          <h3 class="service-title">إدارة وسائل التواصل الاجتماعي</h3>
-          <p class="service-description">
-            نتولى إدارة حساباتك على منصات التواصل الاجتماعي بشكل احترافي، مع إنشاء محتوى جذاب وتفاعلي يعزز تواجد علامتك التجارية ويبني مجتمعاً متفاعلاً.
-          </p>
-          <ul class="service-features">
-            <li>إنشاء وإدارة المحتوى على المنصات المختلفة</li>
-            <li>التفاعل مع الجمهور وبناء المجتمع</li>
-            <li>إدارة الحملات الإعلانية المدفوعة</li>
-            <li>تصميم المنشورات والجرافيك</li>
-            <li>تحليل الأداء وإعداد التقارير</li>
-          </ul>
-        </div>
-        
-        <!-- Service 6 -->
-        <div class="service-detailed-card">
-          <div class="service-icon large-icon">
-            <span>📈</span>
-          </div>
-          <h3 class="service-title">استشارات التحول الرقمي</h3>
-          <p class="service-description">
-            نقدم استشارات متخصصة لمساعدة الشركات على الاستفادة من التقنيات الحديثة وتحسين عملياتها وتعزيز تواجدها الرقمي.
-          </p>
-          <ul class="service-features">
-            <li>تطوير استراتيجية التحول الرقمي</li>
-            <li>تحليل احتياجات العمل والفرص الرقمية</li>
-            <li>تطوير خارطة طريق للتحول الرقمي</li>
-            <li>تحسين العمليات وأتمتة سير العمل</li>
-            <li>متابعة وقياس مؤشرات الأداء الرئيسية</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Process Section -->
-  <section class="process-section">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-badge">منهجيتنا</span>
-        <h2 class="section-title">كيف <span class="text-gradient">نعمل</span></h2>
-        <p class="section-description">نتبع منهجية واضحة ومنظمة في جميع مشاريعنا لضمان تقديم أفضل النتائج وتحقيق أهداف عملائنا</p>
-      </div>
-      
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3 class="step-title">الاستماع والفهم</h3>
-            <p class="step-description">
-              نبدأ بالاستماع إليك وفهم احتياجاتك وأهدافك وتحدياتك، لتكوين صورة واضحة عن مشروعك.
-            </p>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">روكيت</span>
+                        <span class="logo-emoji">🚀</span>
+                    </a>
+                    <p class="footer-description">نحن وكالة رقمية متخصصة في تقديم حلول تقنية مبتكرة تساعد العملاء على تحقيق أهدافهم</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">روابط سريعة</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="services.html">خدماتنا</a></li>
+                            <li><a href="portfolio.html">أعمالنا</a></li>
+                            <li><a href="team.html">فريقنا</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">خدماتنا</h3>
+                        <ul class="footer-links-list" id="footerServicesList">
+                            <!-- Services links will be added here via JavaScript -->
+                            <li><a href="services.html">تصميم المواقع</a></li>
+                            <li><a href="services.html">تطوير التطبيقات</a></li>
+                            <li><a href="services.html">التسويق الرقمي</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 class="footer-links-title">تواصل معنا</h3>
+                        <ul class="footer-contact-list" id="footerContactInfo">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>القاهرة، مصر</span></li>
+                            <li><i class="fas fa-phone"></i> <span>+20 123 456 7890</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>info@rocketagency.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة</p>
+            </div>
         </div>
-        
-        <div class="process-step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3 class="step-title">التحليل والتخطيط</h3>
-            <p class="step-description">
-              نقوم بتحليل متطلبات المشروع ووضع خطة عمل متكاملة تشمل جميع جوانب المشروع والموارد اللازمة.
-            </p>
-          </div>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3 class="step-title">التصميم والتطوير</h3>
-            <p class="step-description">
-              نبدأ في تنفيذ المشروع وفق الخطة الموضوعة، مع الحرص على الالتزام بأعلى معايير الجودة.
-            </p>
-          </div>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3 class="step-title">المراجعة والاختبار</h3>
-            <p class="step-description">
-              نقوم باختبار شامل للمشروع للتأكد من جودته وأدائه وتوافقه مع المتطلبات الموضوعة.
-            </p>
-          </div>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">05</div>
-          <div class="step-content">
-            <h3 class="step-title">الإطلاق والدعم</h3>
-            <p class="step-description">
-              نقوم بإطلاق المشروع ومتابعته وتقديم الدعم المستمر لضمان استمرارية نجاحه وتطويره.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-badge">الأسئلة الشائعة</span>
-        <h2 class="section-title">أسئلة <span class="text-gradient">متكررة</span></h2>
-      </div>
-      
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">كم تستغرق عملية تطوير موقع إلكتروني؟</div>
-          <div class="faq-answer">
-            <p>تختلف المدة حسب حجم وتعقيد المشروع، لكن عادة ما تستغرق من 2-8 أسابيع. نقوم بتحديد جدول زمني دقيق بعد مناقشة متطلبات المشروع بالتفصيل.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">هل تقدمون خدمات الصيانة بعد إطلاق المشروع؟</div>
-          <div class="faq-answer">
-            <p>نعم، نقدم خدمات الصيانة والدعم المستمر لجميع مشاريعنا، ويمكننا تقديم باقات صيانة شهرية أو سنوية حسب احتياجات العميل.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">كيف يمكنني متابعة تقدم العمل في مشروعي؟</div>
-          <div class="faq-answer">
-            <p>نقدم تقارير دورية عن سير العمل في المشروع، ونستخدم أدوات إدارة المشاريع التي تتيح للعميل متابعة التقدم بشكل مستمر والاطلاع على آخر التطورات.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">ما هي تكلفة خدماتكم؟</div>
-          <div class="faq-answer">
-            <p>تختلف التكلفة حسب نوع وحجم المشروع ومتطلباته. نقدم عروض أسعار مفصلة بعد دراسة احتياجات العميل وتحديد نطاق العمل بدقة.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">هل تقدمون خدمات لعملاء خارج المملكة العربية السعودية؟</div>
-          <div class="faq-answer">
-            <p>نعم، نقدم خدماتنا لعملاء من مختلف أنحاء العالم، ولدينا خبرة في العمل مع عملاء من مختلف الدول العربية والأجنبية.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">جاهز لبدء مشروعك الرقمي؟</h2>
-        <p class="cta-description">تواصل معنا اليوم للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
-        <a href="contact.html" class="animated-button cta-button">
-          <span>احصل على عرض سعر</span>
-          <span class="icon">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <a href="index.html" class="footer-logo">
-            <span class="logo-text">روكيت</span>
-            <span class="logo-icon">🚀</span>
-          </a>
-          <p class="footer-description">
-            نقدم حلول رقمية متكاملة للشركات والأفراد لمساعدتهم على تحقيق أهدافهم وتوسيع نطاق أعمالهم.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"><span>فيسبوك</span></a>
-            <a href="#" class="social-link"><span>تويتر</span></a>
-            <a href="#" class="social-link"><span>انستغرام</span></a>
-            <a href="#" class="social-link"><span>لينكد إن</span></a>
-          </div>
-        </div>
-        
-        <div class="footer-links">
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">روابط سريعة</h3>
-            <ul class="footer-menu">
-              <li><a href="index.html">الرئيسية</a></li>
-              <li><a href="about.html">من نحن</a></li>
-              <li><a href="services.html">خدماتنا</a></li>
-              <li><a href="portfolio.html">أعمالنا</a></li>
-              <li><a href="team.html">فريقنا</a></li>
-              <li><a href="contact.html">تواصل معنا</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">خدماتنا</h3>
-            <ul class="footer-menu">
-              <li><a href="services.html">تصميم المواقع</a></li>
-              <li><a href="services.html">تطوير التطبيقات</a></li>
-              <li><a href="services.html">التسويق الرقمي</a></li>
-              <li><a href="services.html">تحسين محركات البحث</a></li>
-              <li><a href="services.html">إدارة وسائل التواصل</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-links-column">
-            <h3 class="footer-links-title">تواصل معنا</h3>
-            <ul class="contact-info">
-              <li>
-                <span class="contact-icon">📍</span>
-                <span>الرياض، المملكة العربية السعودية</span>
-              </li>
-              <li>
-                <span class="contact-icon">📞</span>
-                <span>+966 123 456 789</span>
-              </li>
-              <li>
-                <span class="contact-icon">📧</span>
-                <span>info@rocket-agency.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="copyright">جميع الحقوق محفوظة &copy; 2023 شركة روكيت للتسويق الإلكتروني والبرمجة</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="navbar.js"></script>
-  <script>
-    // Initialize FAQ accordion
-    document.addEventListener('DOMContentLoaded', function() {
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-          item.classList.toggle('active');
-          
-          // Close other items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
-        });
-      });
-    });
-  </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/services.js"></script>
 </body>
 </html>
