@@ -4,483 +4,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-description" name="description" content="روكيت وكالة رقمية متخصصة في تقديم خدمات تصميم وتطوير المواقع الإلكترونية وتطبيقات الجوال وخدمات التسويق الرقمي">
-    <meta id="meta-keywords" name="keywords" content="تصميم مواقع, برمجة تطبيقات, تسويق رقمي, السعودية">
+    <title>روكيت - وكالة التصميم الرقمي</title>
+    <meta name="description" content="روكيت - وكالة تصميم رقمي متخصصة في تصميم وتطوير المواقع الإلكترونية وتطبيقات الجوال والهوية البصرية">
     
-    <!-- Open Graph Meta Tags -->
-    <meta id="og-title" property="og:title" content="روكيت للتصميم والبرمجة">
-    <meta id="og-description" property="og:description" content="روكيت وكالة رقمية متخصصة في تقديم خدمات تصميم وتطوير المواقع الإلكترونية وتطبيقات الجوال وخدمات التسويق الرقمي">
-    <meta property="og:type" content="website">
-    <meta id="og-url" property="og:url" content="">
-    <meta id="og-image" property="og:image" content="assets/images/og-image.jpg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta id="twitter-title" name="twitter:title" content="روكيت للتصميم والبرمجة">
-    <meta id="twitter-description" name="twitter:description" content="روكيت وكالة رقمية متخصصة في تقديم خدمات تصميم وتطوير المواقع الإلكترونية وتطبيقات الجوال وخدمات التسويق الرقمي">
-    <meta id="twitter-image" name="twitter:image" content="assets/images/og-image.jpg">
-    
-    <title id="page-title">روكيت للتصميم والبرمجة</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Font Awesome -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    
-    <!-- Custom Header Scripts -->
-    <div id="header-scripts"></div>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container-custom">
-            <div class="navbar-content">
-                <!-- Logo -->
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
                 <a href="index.html" class="logo">
                     <span class="logo-text">روكيت</span>
-                    <span class="logo-emoji">🚀</span>
+                    <span class="logo-icon">🚀</span>
                 </a>
-
-                <!-- Desktop Menu -->
-                <nav class="desktop-menu">
-                    <a href="index.html" class="menu-item active">الرئيسية</a>
-                    <a href="services.html" class="menu-item">خدماتنا</a>
-                    <a href="portfolio.html" class="menu-item">أعمالنا</a>
-                    <a href="team.html" class="menu-item">فريقنا</a>
-                    <a href="contact.html" class="menu-item">اتصل بنا</a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="portfolio.html">أعمالنا</a></li>
+                        <li><a href="team.html">فريق العمل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
                 </nav>
-
-                <!-- CTA Button -->
-                <div class="cta-container">
-                    <a href="contact.html" class="cta-button">احصل على عرض سعر</a>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <button id="mobileMenuBtn" class="mobile-menu-toggle" aria-label="القائمة" aria-expanded="false">
-                    <i class="fas fa-bars menu-icon"></i>
-                    <i class="fas fa-times close-icon"></i>
+                
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="قائمة الموبايل" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="portfolio.html">أعمالنا</a></li>
+                    <li><a href="team.html">فريق العمل</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
             </div>
         </div>
     </header>
-
-    <!-- Mobile Menu (Hidden by Default) -->
-    <div id="mobileMenu" class="mobile-menu">
-        <nav>
-            <a href="index.html" class="menu-item active">الرئيسية</a>
-            <a href="services.html" class="menu-item">خدماتنا</a>
-            <a href="portfolio.html" class="menu-item">أعمالنا</a>
-            <a href="team.html" class="menu-item">فريقنا</a>
-            <a href="contact.html" class="menu-item">اتصل بنا</a>
-            <a href="contact.html" class="cta-button mobile">احصل على عرض سعر</a>
-        </nav>
-    </div>
-
+    
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container-custom">
+    <section class="hero-section">
+        <div class="container">
             <div class="hero-content">
-                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-                    <h1>وكالة متخصصة في <span class="highlight">التصميم والبرمجة</span></h1>
-                    <p>نساعدك على تحويل أفكارك إلى واقع رقمي ملموس من خلال تصميم وتطوير مواقع ويب وتطبيقات مبتكرة تلبي احتياجات عملك</p>
-                    <div class="hero-buttons">
-                        <a href="services.html" class="primary-button">خدماتنا <i class="fas fa-arrow-left"></i></a>
-                        <a href="contact.html" class="secondary-button">تواصل معنا</a>
-                    </div>
-                </div>
-                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="assets/images/hero-image.png" alt="روكيت للتصميم والبرمجة">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800">نصمم تجارب رقمية <span class="highlight">مميزة</span></h1>
+                <p class="hero-text" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    نحن وكالة متخصصة في تصميم وتطوير الحلول الرقمية المبتكرة من مواقع الويب وتطبيقات الجوال وتصميم الهوية البصرية.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <a href="portfolio.html" class="btn btn-primary">استعرض أعمالنا</a>
+                    <a href="contact.html" class="btn btn-outline">تواصل معنا</a>
                 </div>
             </div>
-        </div>
-        <div class="hero-shape">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" fill-opacity="1" d="M0,96L60,117.3C120,139,240,181,360,181.3C480,181,600,139,720,128C840,117,960,139,1080,154.7C1200,171,1320,181,1380,186.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <img src="assets/images/hero-image.png" alt="روكيت - تصميم رقمي مميز">
+            </div>
         </div>
     </section>
-
+    
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container-custom">
-            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
-                <h2>خدماتنا</h2>
-                <p>نقدم باقة متكاملة من الخدمات الرقمية المميزة</p>
+    <section class="services-section section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">خدماتنا</span>
+                <h2 class="section-title">ماذا نقدم لعملائنا</h2>
+                <p class="section-description">
+                    نقدم مجموعة متكاملة من الخدمات الرقمية المصممة خصيصًا لتلبية احتياجات عملك
+                </p>
             </div>
             
-            <div id="servicesContainer" class="services-grid">
-                <!-- Services will be loaded dynamically here -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                </div>
+            <div id="servicesContainer" class="services-container">
+                <!-- Services will be loaded dynamically -->
             </div>
             
-            <div class="section-footer" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <a href="services.html" class="view-all-button">عرض جميع الخدمات <i class="fas fa-arrow-left"></i></a>
+            <div class="section-footer" data-aos="fade-up">
+                <a href="services.html" class="btn btn-outline">عرض جميع الخدمات</a>
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section class="projects">
-        <div class="container-custom">
-            <div class="section-header light" data-aos="fade-up" data-aos-duration="800">
-                <h2>أحدث مشاريعنا</h2>
-                <p>نفخر بتقديم أفضل الحلول الرقمية لعملائنا</p>
+    
+    <!-- Featured Projects Section -->
+    <section class="projects-section section bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">أعمالنا</span>
+                <h2 class="section-title">مشاريع مميزة</h2>
+                <p class="section-description">
+                    نفخر بتقديم مجموعة من المشاريع المميزة التي نفذناها لعملائنا في مختلف المجالات
+                </p>
             </div>
             
-            <div id="featuredProjectsContainer" class="projects-grid">
-                <!-- Projects will be loaded dynamically here -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                </div>
+            <div id="featuredProjectsContainer" class="projects-container">
+                <!-- Projects will be loaded dynamically -->
             </div>
             
-            <div class="section-footer" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <a href="portfolio.html" class="view-all-button light">عرض جميع المشاريع <i class="fas fa-arrow-left"></i></a>
+            <div class="section-footer" data-aos="fade-up">
+                <a href="portfolio.html" class="btn btn-outline">عرض جميع المشاريع</a>
             </div>
         </div>
     </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container-custom">
-            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
-                <h2>لماذا تختار روكيت؟</h2>
-                <p>أسباب تجعلنا الخيار المثالي لمشروعك الرقمي</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <div class="feature-icon">
+    
+    <!-- Statistics Section -->
+    <section class="stats-section section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>سرعة في التنفيذ</h3>
-                    <p>نلتزم بتسليم المشاريع في الموعد المحدد مع الحفاظ على أعلى معايير الجودة</p>
+                    <h3><span class="counter" data-target="250">0</span><span>+</span></h3>
+                    <p>مشروع مكتمل</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>خبرة تقنية عالية</h3>
-                    <p>فريق من المطورين والمصممين ذوي الكفاءة والخبرة في مختلف التقنيات</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>تصاميم متجاوبة</h3>
-                    <p>جميع مشاريعنا تعمل بشكل مثالي على مختلف الأجهزة والشاشات</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>دعم فني مستمر</h3>
-                    <p>نقدم خدمات الدعم الفني المستمر لضمان عمل مشروعك بكفاءة</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>تحسين محركات البحث</h3>
-                    <p>نطبق أفضل ممارسات SEO لضمان ظهور موقعك في نتائج البحث</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>حماية وأمان</h3>
-                    <p>نولي اهتماماً خاصاً بأمان المواقع والتطبيقات وحماية البيانات</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="statistics">
-        <div class="container-custom">
-            <div class="stats-grid">
-                <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <div class="stat-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="stat-number">
-                        <span class="counter" data-target="150">0</span>
-                        <span>+</span>
-                    </div>
-                    <p class="stat-title">مشروع مكتمل</p>
-                </div>
-                
-                <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <div class="stat-number">
-                        <span class="counter" data-target="95">0</span>
-                        <span>+</span>
-                    </div>
-                    <p class="stat-title">عميل سعيد</p>
+                    <h3><span class="counter" data-target="120">0</span><span>+</span></h3>
+                    <p>عميل سعيد</p>
                 </div>
                 
-                <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-icon">
-                        <i class="fas fa-coffee"></i>
+                        <i class="fas fa-trophy"></i>
                     </div>
-                    <div class="stat-number">
-                        <span class="counter" data-target="3500">0</span>
-                        <span>+</span>
-                    </div>
-                    <p class="stat-title">فنجان قهوة</p>
+                    <h3><span class="counter" data-target="15">0</span><span>+</span></h3>
+                    <p>جائزة محلية ودولية</p>
                 </div>
                 
-                <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="stat-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div class="stat-number">
-                        <span class="counter" data-target="200000">0</span>
-                        <span>+</span>
-                    </div>
-                    <p class="stat-title">سطر برمجي</p>
+                    <h3><span class="counter" data-target="8">0</span><span>+</span></h3>
+                    <p>سنوات من الخبرة</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container-custom">
-            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
-                <h2>آراء العملاء</h2>
-                <p>ماذا يقول عملاؤنا عن خدماتنا</p>
+    
+    <!-- Team Section -->
+    <section class="team-section section bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">فريقنا</span>
+                <h2 class="section-title">خبراء في مجالاتهم</h2>
+                <p class="section-description">
+                    نضم نخبة من المحترفين ذوي الخبرة والشغف لتقديم أفضل الحلول الرقمية
+                </p>
             </div>
             
-            <div class="testimonial-slider" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <div class="testimonial-item active">
+            <div id="teamContainer" class="team-container">
+                <!-- Team members will be loaded dynamically -->
+            </div>
+            
+            <div class="section-footer" data-aos="fade-up">
+                <a href="team.html" class="btn btn-outline">التعرف على الفريق</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">آراء العملاء</span>
+                <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+                <p class="section-description">
+                    نفخر بآراء عملائنا الإيجابية ونسعى دائمًا لتقديم أفضل تجربة ممكنة
+                </p>
+            </div>
+            
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>"تجربتي مع شركة روكيت كانت مميزة جداً، فقد قاموا بتصميم موقع شركتي بطريقة احترافية وجذابة، وكان فريق العمل متعاون ومتفهم لاحتياجاتي."</p>
+                        <p>"روكيت غيرت مفهومي عن التعامل مع شركات التصميم. احترافية عالية ودقة في التنفيذ والالتزام بالمواعيد. تجربة استثنائية!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="assets/images/client1.jpg" alt="أحمد محمد">
+                        <div class="author-img">
+                            <img src="assets/images/client1.jpg" alt="محمد أحمد">
                         </div>
                         <div class="author-info">
-                            <h4>أحمد محمد</h4>
-                            <p>الرئيس التنفيذي - شركة التقنية</p>
+                            <h4>محمد أحمد</h4>
+                            <p>مدير تنفيذي - شركة تقنية</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>"يتميز فريق روكيت بالمهنية العالية والاحترافية في التعامل، وقد تمكنوا من تنفيذ مشروعنا بجودة عالية وفي وقت قياسي. أنصح بالتعامل معهم."</p>
+                        <p>"تجربة رائعة مع فريق روكيت. مستوى احترافي عالي وفهم عميق لاحتياجات العميل. النتيجة كانت أكثر مما توقعت!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="assets/images/client2.jpg" alt="سارة عبدالله">
+                        <div class="author-img">
+                            <img src="assets/images/client2.jpg" alt="سارة علي">
                         </div>
                         <div class="author-info">
-                            <h4>سارة عبدالله</h4>
-                            <p>مديرة التسويق - مجموعة السلام</p>
+                            <h4>سارة علي</h4>
+                            <p>صاحبة متجر إلكتروني</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>"تطبيق الجوال الذي صممته روكيت لمتجرنا الإلكتروني كان نقلة نوعية في أعمالنا، وقد حقق نتائج مبهرة في زيادة المبيعات وتحسين تجربة العملاء."</p>
+                        <p>"فريق محترف واستجابة سريعة لكل الملاحظات. النتيجة النهائية كانت مبهرة وعكست رؤيتنا بشكل كامل. أنصح الجميع بالتعامل معهم."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="assets/images/client3.jpg" alt="خالد العمري">
+                        <div class="author-img">
+                            <img src="assets/images/client3.jpg" alt="أحمد خالد">
                         </div>
                         <div class="author-info">
-                            <h4>خالد العمري</h4>
-                            <p>صاحب متجر إلكتروني</p>
+                            <h4>أحمد خالد</h4>
+                            <p>مدير تسويق - شركة عقارية</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact CTA Section -->
-    <section class="contact-cta" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container-custom">
-            <div class="cta-content">
-                <h2>هل أنت جاهز لبدء مشروعك التالي؟</h2>
-                <p>تواصل معنا اليوم للحصول على استشارة مجانية واستفد من خبرتنا لتحويل فكرتك إلى مشروع ناجح</p>
-                <a href="contact.html" class="cta-button large">احصل على عرض سعر الآن</a>
+    
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container" data-aos="fade-up">
+                <h2>لنبدأ مشروعك القادم معًا</h2>
+                <p>نحن جاهزون لمساعدتك في تحقيق رؤيتك. دعنا نتحدث عن مشروعك ونبدأ العمل على تحويله إلى واقع.</p>
+                <a href="contact.html" class="btn btn-primary">تواصل معنا الآن</a>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-custom">
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <a href="index.html" class="logo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
                         <span class="logo-text">روكيت</span>
-                        <span class="logo-emoji">🚀</span>
+                        <span class="logo-icon">🚀</span>
                     </a>
-                    <p>وكالة متخصصة في تقديم خدمات التصميم والبرمجة وتطوير المشاريع الرقمية المبتكرة</p>
+                    <p>
+                        نحن وكالة تصميم رقمي متخصصة في تقديم حلول إبداعية ومبتكرة تساعد الشركات على النمو والتطور في العالم الرقمي.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-links">
-                    <div class="footer-links-col">
-                        <h3>روابط سريعة</h3>
-                        <ul>
-                            <li><a href="index.html">الرئيسية</a></li>
-                            <li><a href="services.html">خدماتنا</a></li>
-                            <li><a href="portfolio.html">أعمالنا</a></li>
-                            <li><a href="team.html">فريقنا</a></li>
-                            <li><a href="contact.html">اتصل بنا</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-col">
-                        <h3>خدماتنا</h3>
-                        <ul>
-                            <li><a href="services.html">تصميم المواقع</a></li>
-                            <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">التسويق الرقمي</a></li>
-                            <li><a href="services.html">تحسين محركات البحث</a></li>
-                            <li><a href="services.html">تصميم الهوية البصرية</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-col">
-                        <h3>تواصل معنا</h3>
-                        <ul class="contact-list">
-                            <li><i class="fas fa-map-marker-alt"></i> <span id="footer-address">الرياض، المملكة العربية السعودية</span></li>
-                            <li><i class="fas fa-phone-alt"></i> <a id="footer-phone" href="tel:+966501234567">+966 50 123 4567</a></li>
-                            <li><i class="fas fa-envelope"></i> <a id="footer-email" href="mailto:info@rocket-agency.com">info@rocket-agency.com</a></li>
-                        </ul>
-                        
-                        <div class="footer-social">
-                            <a id="social-facebook" href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a id="social-twitter" href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a id="social-instagram" href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a id="social-linkedin" href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="portfolio.html">أعمالنا</a></li>
+                        <li><a href="team.html">فريق العمل</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="services.html">تصميم المواقع</a></li>
+                        <li><a href="services.html">تطبيقات الموبايل</a></li>
+                        <li><a href="services.html">الهوية البصرية</a></li>
+                        <li><a href="services.html">التسويق الرقمي</a></li>
+                        <li><a href="services.html">تحسين محركات البحث</a></li>
+                        <li><a href="services.html">إدارة وسائل التواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+966512345678">+966 512 345 678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@rocket-agency.com">info@rocket-agency.com</a></p>
+                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 9:00 ص - 6:00 م</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright">© <span id="currentYear">2023</span> روكيت للتصميم والبرمجة. جميع الحقوق محفوظة.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">سياسة الخصوصية</a>
-                    <a href="#">الشروط والأحكام</a>
-                </div>
+                <p>&copy; <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
     
-    <!-- AOS Animation Library -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </a>
     
-    <!-- Main JavaScript -->
+    <!-- Required Lovable Script -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script>
-      // Load SEO settings
-      fetch('api/settings.php')
-        .then(response => response.json())
-        .then(settings => {
-          if (settings) {
-            // Update site title and meta tags
-            if (settings.site_title) {
-              document.getElementById('page-title').textContent = settings.site_title;
-              document.getElementById('og-title').setAttribute('content', settings.site_title);
-              document.getElementById('twitter-title').setAttribute('content', settings.site_title);
-            }
-            
-            // Update footer contact information
-            if (settings.address) document.getElementById('footer-address').textContent = settings.address;
-            if (settings.phone) {
-              const phoneElement = document.getElementById('footer-phone');
-              phoneElement.textContent = settings.phone;
-              phoneElement.href = `tel:${settings.phone.replace(/\s/g, '')}`;
-            }
-            if (settings.email) {
-              const emailElement = document.getElementById('footer-email');
-              emailElement.textContent = settings.email;
-              emailElement.href = `mailto:${settings.email}`;
-            }
-            
-            // Update social media links
-            if (settings.facebook) document.getElementById('social-facebook').href = settings.facebook;
-            if (settings.twitter) document.getElementById('social-twitter').href = settings.twitter;
-            if (settings.instagram) document.getElementById('social-instagram').href = settings.instagram;
-            if (settings.linkedin) document.getElementById('social-linkedin').href = settings.linkedin;
-          }
-        })
-        .catch(error => console.error('Error loading settings:', error));
-      
-      // Load SEO-specific settings
-      fetch('admin/api/seo.php')
-        .then(response => response.json())
-        .then(data => {
-          if (data.success && data.data) {
-            const seo = data.data;
-            
-            // Update meta description
-            if (seo.meta_description) {
-              document.getElementById('meta-description').setAttribute('content', seo.meta_description);
-              document.getElementById('og-description').setAttribute('content', seo.meta_description);
-              document.getElementById('twitter-description').setAttribute('content', seo.meta_description);
-            }
-            
-            // Update meta keywords
-            if (seo.meta_keywords) {
-              document.getElementById('meta-keywords').setAttribute('content', seo.meta_keywords);
-            }
-            
-            // Update og:image
-            if (seo.og_image) {
-              document.getElementById('og-image').setAttribute('content', seo.og_image);
-              document.getElementById('twitter-image').setAttribute('content', seo.og_image);
-            }
-            
-            // Set og:url to current URL
-            document.getElementById('og-url').setAttribute('content', window.location.href);
-            
-            // Add Google Analytics or other header scripts
-            if (seo.header_scripts) {
-              document.getElementById('header-scripts').innerHTML = seo.header_scripts;
-            }
-            
-            // Add any footer scripts
-            if (seo.footer_scripts) {
-              const footerScripts = document.createElement('div');
-              footerScripts.innerHTML = seo.footer_scripts;
-              document.body.appendChild(footerScripts);
-            }
-            
-            // Add Google Analytics if provided
-            if (seo.google_analytics) {
-              const gaScript = document.createElement('div');
-              gaScript.innerHTML = seo.google_analytics;
-              document.head.appendChild(gaScript);
-            }
-          }
-        })
-        .catch(error => console.error('Error loading SEO settings:', error));
-    </script>
 </body>
 </html>
