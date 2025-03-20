@@ -7,14 +7,14 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: GET");
 
 try {
-    $stmt = $pdo->prepare("SELECT * FROM services ORDER BY id DESC");
+    $stmt = $pdo->prepare("SELECT * FROM services ORDER BY order_index, id ASC");
     $stmt->execute();
     $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Fix image paths if needed
     foreach ($services as &$service) {
         if (!empty($service['image']) && strpos($service['image'], 'http') !== 0) {
-            $service['image'] = 'assets/images/' . $service['image'];
+            $service['image'] = $service['image']; // Image path is already set correctly
         }
         
         // Ensure icons have 'fa-' prefix

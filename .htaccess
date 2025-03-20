@@ -1,48 +1,42 @@
 
+# Enable rewrite engine
 RewriteEngine On
 
-# Redirect to index.html if file doesn't exist (except for admin directory)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/admin/ [NC]
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# Redirect robots.txt to PHP file
+RewriteRule ^robots\.txt$ robots.php [L]
 
-# Allow direct access to PHP files in admin directory
-RewriteCond %{REQUEST_URI} ^/admin/.*\.php [NC]
-RewriteRule ^ - [L]
-
-# Admin panel special handling for non-PHP URLs
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/admin/([^\.]+)$ [NC]
-RewriteRule ^admin/([^\.]+)$ admin/$1.php [NC,L]
-
-# Prevent direct access to PHP files (except API and admin)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
-RewriteCond %{REQUEST_URI} !^/api/ [NC]
-RewriteCond %{REQUEST_URI} !^/admin/ [NC]
-RewriteRule ^ %1 [R=301,L]
-
-# Set UTF-8 charset
-AddDefaultCharset UTF-8
-
-# Enable CORS
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-</IfModule>
+# Redirect sitemap.xml to PHP file
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Prevent directory listing
 Options -Indexes
 
-# Error pages
-ErrorDocument 404 /index.html
+# Set default charset
+AddDefaultCharset UTF-8
 
-# PHP settings
-<IfModule mod_php7.c>
-    php_flag display_errors On
-    php_value max_execution_time 300
-    php_value max_input_time 300
-    php_value memory_limit 256M
-    php_value post_max_size 32M
-    php_value upload_max_filesize 32M
+# Enable compression for text files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
 </IfModule>
+
+# Set browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "^\.htaccess|\.git|\.env|config\.php$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>

@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `phone` varchar(20) DEFAULT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
+  `is_read` tinyint(1) NOT NULL DEFAULT '0',
   `status` enum('read','unread') NOT NULL DEFAULT 'unread',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -57,6 +58,9 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `image` varchar(255) NOT NULL,
   `link` varchar(255) DEFAULT NULL,
   `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `order_index` int(11) DEFAULT '0',
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -68,7 +72,10 @@ CREATE TABLE IF NOT EXISTS `services` (
   `description` text NOT NULL,
   `icon` varchar(50) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
+  `features` text DEFAULT NULL,
   `order_index` int(11) NOT NULL DEFAULT '0',
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -94,9 +101,13 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_title` varchar(255) NOT NULL DEFAULT 'روكيت للتصميم والبرمجة',
   `site_description` text DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `favicon` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
   `address` text DEFAULT NULL,
+  `google_maps` varchar(255) DEFAULT NULL,
+  `contact_form_email` varchar(100) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
   `twitter` varchar(255) DEFAULT NULL,
   `instagram` varchar(255) DEFAULT NULL,
@@ -110,13 +121,37 @@ CREATE TABLE IF NOT EXISTS `settings` (
 INSERT INTO `settings` (`site_title`, `site_description`, `email`, `phone`, `address`) VALUES
 ('روكيت للتصميم والبرمجة', 'وكالة متخصصة في تقديم خدمات التصميم والبرمجة بجودة عالية', 'info@rocket-agency.com', '+966 50 123 4567', 'الرياض، المملكة العربية السعودية');
 
+-- جدول إعدادات SEO (seo_settings)
+CREATE TABLE IF NOT EXISTS `seo_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` text DEFAULT NULL,
+  `meta_keywords` varchar(255) DEFAULT NULL,
+  `og_image` varchar(255) DEFAULT NULL,
+  `google_analytics` text DEFAULT NULL,
+  `robots_txt` text DEFAULT NULL,
+  `header_scripts` text DEFAULT NULL,
+  `footer_scripts` text DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- إضافة إعدادات SEO افتراضية
+INSERT INTO `seo_settings` (`meta_title`, `meta_description`, `meta_keywords`, `robots_txt`) VALUES
+('روكيت للتصميم والبرمجة - وكالة رقمية متكاملة',
+'روكيت هي وكالة رقمية متخصصة في تقديم خدمات التصميم والبرمجة وتطوير المواقع والتطبيقات بجودة عالية',
+'تصميم مواقع, برمجة, تطبيقات, تسويق رقمي, السعودية',
+'User-agent: *\nAllow: /\nSitemap: https://yourdomain.com/sitemap.xml');
+
 -- جدول الصفحات (pages)
 CREATE TABLE IF NOT EXISTS `pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `content` text NOT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
   `meta_description` text DEFAULT NULL,
+  `meta_keywords` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
