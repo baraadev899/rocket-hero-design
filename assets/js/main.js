@@ -45,12 +45,17 @@ async function loadServices() {
     if (!servicesContainer) return;
     
     try {
-        servicesContainer.innerHTML = '<div class="loading-spinner"></div>';
+        servicesContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
         const response = await fetch('api/services.php');
-        const services = await response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         
-        if (!Array.isArray(services) || services.length === 0) {
+        const data = await response.json();
+        const services = Array.isArray(data) ? data : (data.data || []);
+        
+        if (!services.length) {
             servicesContainer.innerHTML = '<p class="text-center">لا توجد خدمات للعرض</p>';
             return;
         }
@@ -63,7 +68,7 @@ async function loadServices() {
             const icon = service.icon || 'fa-rocket';
             
             html += `
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="service-icon">
                         <i class="fas ${icon}"></i>
                     </div>
@@ -86,12 +91,17 @@ async function loadFeaturedProjects() {
     if (!featuredProjectsContainer) return;
     
     try {
-        featuredProjectsContainer.innerHTML = '<div class="loading-spinner"></div>';
+        featuredProjectsContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
         const response = await fetch('api/projects.php?featured=1');
-        const projects = await response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         
-        if (!Array.isArray(projects) || projects.length === 0) {
+        const data = await response.json();
+        const projects = Array.isArray(data) ? data : (data.data || []);
+        
+        if (!projects.length) {
             featuredProjectsContainer.innerHTML = '<p class="text-center">لا توجد مشاريع مميزة للعرض</p>';
             return;
         }
@@ -100,7 +110,7 @@ async function loadFeaturedProjects() {
         
         for (const project of projects) {
             html += `
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="project-img">
                         <img src="${project.image || 'assets/images/project-placeholder.jpg'}" alt="${project.title}">
                     </div>
@@ -125,12 +135,17 @@ async function loadTeamMembers() {
     if (!teamContainer) return;
     
     try {
-        teamContainer.innerHTML = '<div class="loading-spinner"></div>';
+        teamContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
         const response = await fetch('api/team.php');
-        const team = await response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         
-        if (!Array.isArray(team) || team.length === 0) {
+        const data = await response.json();
+        const team = Array.isArray(data) ? data : (data.data || []);
+        
+        if (!team.length) {
             teamContainer.innerHTML = '<p class="text-center">لا يوجد أعضاء فريق للعرض</p>';
             return;
         }
@@ -139,7 +154,7 @@ async function loadTeamMembers() {
         
         for (const member of team) {
             html += `
-                <div class="team-card">
+                <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="team-img">
                         <img src="${member.image || 'assets/images/team-placeholder.jpg'}" alt="${member.name}">
                     </div>
@@ -270,20 +285,22 @@ function initAOS() {
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
-            once: true
+            once: true,
+            offset: 100,
+            delay: 0
         });
     }
 }
 
 // Document ready function
 document.addEventListener('DOMContentLoaded', () => {
-    // Load data
-    loadServices();
-    loadFeaturedProjects();
-    loadTeamMembers();
-    
     // Initialize UI components
     initTestimonialSlider();
     animateCounters();
     initAOS();
+    
+    // Load data
+    loadServices();
+    loadFeaturedProjects();
+    loadTeamMembers();
 });
