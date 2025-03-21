@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const App = () => {
   useEffect(() => {
-    // Redirect to the static HTML version
+    // توجيه المستخدم إلى النسخة الثابتة HTML
     window.location.href = '/index.html';
   }, []);
 

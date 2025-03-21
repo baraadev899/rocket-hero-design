@@ -8,6 +8,86 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    .not-found-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 0;
+    }
+    
+    .not-found-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .not-found-title {
+      font-size: 10rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--rocket-red), var(--rocket-dark-red));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: var(--neon-glow);
+    }
+    
+    .not-found-subtitle {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--rocket-white);
+    }
+    
+    .not-found-text {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: var(--text-muted);
+    }
+    
+    .rocket-animation {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 40px auto;
+      animation: rocket-move 3s ease-in-out infinite;
+    }
+    
+    .rocket-icon {
+      font-size: 4rem;
+      color: var(--rocket-red);
+      transform: rotate(45deg);
+      text-shadow: var(--neon-glow);
+    }
+    
+    .rocket-trail {
+      position: absolute;
+      top: 70%;
+      left: 45%;
+      width: 10px;
+      height: 100px;
+      background: linear-gradient(to top, transparent, var(--rocket-red));
+      z-index: -1;
+      opacity: 0.7;
+      border-radius: 10px;
+      transform: rotate(45deg);
+      filter: blur(5px);
+    }
+    
+    @keyframes rocket-move {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-20px) translateX(20px);
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }
+  </style>
 </head>
 <body class="dark-mode">
   <div class="bg-animation">
@@ -55,7 +135,7 @@
   <main>
     <section class="not-found-section section-padding">
       <div class="container">
-        <div class="not-found-content text-center">
+        <div class="not-found-content animate-fade-in">
           <h1 class="not-found-title animate-float">404</h1>
           <h2 class="not-found-subtitle">عفواً، الصفحة غير موجودة!</h2>
           <p class="not-found-text">الصفحة التي تبحث عنها غير موجودة أو تم نقلها أو حذفها.</p>
@@ -115,7 +195,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- سكريبت -->
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

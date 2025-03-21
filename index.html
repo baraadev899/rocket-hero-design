@@ -4,14 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>روكيت | وكالة تطوير المواقع والتطبيقات</title>
-  <meta name="description" content="روكيت - وكالة متخصصة في تطوير المواقع والتطبيقات وخدمات التسويق الرقمي">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>روكيت - وكالة تطوير المواقع والتطبيقات</title>
+  <meta name="description" content="روكيت - وكالة تطوير المواقع والتطبيقات وخدمات التسويق الرقمي في المملكة العربية السعودية">
+  
+  <!-- الخطوط -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap">
+  
+  <!-- الأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+  
+  <!-- ملفات CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="dark-mode">
+  <!-- خلفية النجوم المتحركة -->
   <div class="bg-animation">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -19,6 +26,7 @@
     <div id="stars4"></div>
   </div>
 
+  <!-- رأس الصفحة -->
   <header class="site-header">
     <div class="container">
       <div class="header-wrapper">
@@ -42,7 +50,7 @@
         
         <div class="header-actions">
           <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع المظلم">
-            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
           </button>
           <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="قائمة الجوال">
             <span></span>
@@ -54,103 +62,53 @@
     </div>
   </header>
 
+  <!-- القسم الرئيسي -->
   <main>
-    <section class="hero-section section-padding">
+    <!-- قسم البداية -->
+    <section class="hero-section">
       <div class="container">
-        <div class="hero-content animate-float">
-          <h1 class="hero-title">
-            نحن نبتكر <span class="highlight">حلول رقمية</span> تحول أفكارك إلى واقع
-          </h1>
-          <p class="hero-description">
-            نحن وكالة رقمية متخصصة في تطوير المواقع والتطبيقات وخدمات التسويق الرقمي. نساعد الشركات على تحقيق النجاح في العالم الرقمي.
-          </p>
+        <div class="hero-content animate-fade-in">
+          <h1 class="hero-title">نطور حلول رقمية تدفع <span class="highlight">أعمالك</span> للأمام</h1>
+          <p class="hero-description">نقدم خدمات تطوير المواقع والتطبيقات بأحدث التقنيات لمساعدة شركتك على النمو والتوسع في العالم الرقمي.</p>
           <div class="hero-buttons">
-            <a href="services.html" class="btn btn-primary">استكشف خدماتنا</a>
+            <a href="services.html" class="btn btn-primary">خدماتنا <i class="fas fa-arrow-left"></i></a>
             <a href="contact.html" class="btn btn-outline">تواصل معنا</a>
           </div>
         </div>
         
-        <div class="hero-animation">
+        <div class="hero-image animate-float">
           <canvas id="codeParticles"></canvas>
-          <div class="rocket-container">
-            <i class="fas fa-rocket fa-4x" id="rocket"></i>
+          <div id="rocket" class="rocket-animation">
+            <i class="fas fa-rocket fa-4x" style="color: var(--rocket-red);"></i>
           </div>
         </div>
       </div>
     </section>
     
+    <!-- قسم الخدمات -->
     <section class="services-section section-padding">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-slide-up">
           <h2 class="section-title">خدماتنا</h2>
-          <p class="section-subtitle">نقدم مجموعة من الخدمات الرقمية المتكاملة لتلبية احتياجات عملائنا</p>
+          <p class="section-subtitle">نقدم مجموعة متكاملة من الخدمات الرقمية لمساعدة عملائنا على النجاح</p>
         </div>
         
-        <div class="services-grid">
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3>تطوير المواقع</h3>
-            <p>نقوم بتصميم وتطوير مواقع ويب متجاوبة وعصرية تلبي احتياجات عملك وتعزز تواجدك على الإنترنت.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
+        <div class="services-grid" id="services-grid">
+          <!-- سيتم تحميل بيانات الخدمات ديناميكياً من خلال JavaScript -->
+          <div class="service-card loading-placeholder">
+            <div class="service-placeholder-icon"></div>
+            <h3 class="service-placeholder-title"></h3>
+            <p class="service-placeholder-text"></p>
           </div>
-          
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3>تطبيقات الجوال</h3>
-            <p>نطور تطبيقات جوال متميزة لأنظمة iOS و Android بتصاميم فريدة وبتجربة مستخدم مميزة.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
+          <div class="service-card loading-placeholder">
+            <div class="service-placeholder-icon"></div>
+            <h3 class="service-placeholder-title"></h3>
+            <p class="service-placeholder-text"></p>
           </div>
-          
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <h3>متاجر إلكترونية</h3>
-            <p>نساعدك على بناء متجر إلكتروني متكامل لعرض منتجاتك وزيادة مبيعاتك عبر الإنترنت.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
-          </div>
-          
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-bullhorn"></i>
-            </div>
-            <h3>التسويق الرقمي</h3>
-            <p>نقدم خدمات تسويقية متكاملة لتحسين ظهورك على محركات البحث وزيادة وصول عملائك المحتملين.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
-          </div>
-          
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <h3>تصميم الهوية البصرية</h3>
-            <p>نصمم هويات بصرية مميزة تعكس قيم علامتك التجارية وتساعدك على التميز عن المنافسين.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
-          </div>
-          
-          <div class="service-card glass-card">
-            <div class="service-icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <h3>استضافة المواقع</h3>
-            <p>نوفر خدمات استضافة مواقع آمنة وموثوقة مع دعم فني على مدار الساعة وضمان توفر الخدمة.</p>
-            <a href="services.html" class="service-link">
-              اكتشف المزيد <i class="fas fa-arrow-left"></i>
-            </a>
+          <div class="service-card loading-placeholder">
+            <div class="service-placeholder-icon"></div>
+            <h3 class="service-placeholder-title"></h3>
+            <p class="service-placeholder-text"></p>
           </div>
         </div>
         
@@ -160,102 +118,27 @@
       </div>
     </section>
     
+    <!-- قسم الأعمال المميزة -->
     <section class="portfolio-section section-padding">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">أعمالنا</h2>
-          <p class="section-subtitle">نفخر بتقديم مجموعة من المشاريع المميزة التي قمنا بتنفيذها لعملائنا</p>
+        <div class="section-header animate-slide-up">
+          <h2 class="section-title">أعمالنا المميزة</h2>
+          <p class="section-subtitle">نماذج من أحدث المشاريع التي قمنا بتنفيذها لعملائنا</p>
         </div>
         
-        <div class="portfolio-grid">
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="مشروع تطبيق جوال">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>تطبيق الخدمات المنزلية</h3>
-                  <p>تطبيق جوال - iOS و Android</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- سيتم تحميل بيانات المشاريع ديناميكياً من خلال JavaScript -->
+          <div class="portfolio-item loading-placeholder">
+            <div class="portfolio-placeholder-image"></div>
+            <div class="portfolio-placeholder-info"></div>
           </div>
-          
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="مشروع موقع ويب">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>موقع شركة عقارية</h3>
-                  <p>تطوير موقع ويب</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="portfolio-item loading-placeholder">
+            <div class="portfolio-placeholder-image"></div>
+            <div class="portfolio-placeholder-info"></div>
           </div>
-          
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="مشروع متجر إلكتروني">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>متجر إلكتروني للملابس</h3>
-                  <p>متجر إلكتروني</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="تصميم هوية بصرية">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>الهوية البصرية لشركة تكنولوجية</h3>
-                  <p>تصميم هوية بصرية</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="مشروع تطبيق ويب">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>لوحة تحكم لشركة خدمات</h3>
-                  <p>تطبيق ويب</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="portfolio-item glass-card">
-            <div class="portfolio-image">
-              <img src="https://via.placeholder.com/600x400" alt="مشروع تسويق رقمي">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>حملة تسويقية لمنتج جديد</h3>
-                  <p>تسويق رقمي</p>
-                  <a href="portfolio.html" class="portfolio-link">
-                    <i class="fas fa-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="portfolio-item loading-placeholder">
+            <div class="portfolio-placeholder-image"></div>
+            <div class="portfolio-placeholder-info"></div>
           </div>
         </div>
         
@@ -265,17 +148,19 @@
       </div>
     </section>
     
+    <!-- قسم دعوة للتواصل -->
     <section class="cta-section">
       <div class="container">
-        <div class="cta-content">
-          <h2>هل أنت جاهز لبدء مشروعك التالي معنا؟</h2>
-          <p>دعنا نساعدك في تحويل أفكارك إلى واقع رقمي مميز. فريقنا من الخبراء جاهز للتعاون معك!</p>
+        <div class="cta-content animate-fade-in">
+          <h2>لنحول أفكارك إلى واقع رقمي مبهر</h2>
+          <p>نحن جاهزون لمساعدتك في تحقيق أهدافك الرقمية وتطوير مشروعك الإلكتروني</p>
           <a href="contact.html" class="btn btn-primary">تواصل معنا الآن</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- تذييل الصفحة -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -322,7 +207,153 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- سكريبت -->
   <script src="./assets/js/script.js"></script>
+  <script>
+    // تحميل بيانات الخدمات من API
+    async function loadServices() {
+      try {
+        const response = await fetch('./api/services.php');
+        const services = await response.json();
+        
+        const servicesGrid = document.getElementById('services-grid');
+        servicesGrid.innerHTML = '';
+        
+        // عرض أول 3 خدمات فقط
+        const limitedServices = services.slice(0, 3);
+        
+        limitedServices.forEach(service => {
+          servicesGrid.innerHTML += `
+            <div class="service-card animate-slide-up">
+              <div class="service-icon">
+                <i class="fas ${service.icon || 'fa-code'}"></i>
+              </div>
+              <h3>${service.title}</h3>
+              <p>${service.short_description || service.description.substring(0, 100) + '...'}</p>
+              <a href="services.html#service-${service.id}" class="service-link">المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+          `;
+        });
+      } catch (error) {
+        console.error('Error loading services:', error);
+        // إظهار بيانات افتراضية في حالة الخطأ
+        const servicesGrid = document.getElementById('services-grid');
+        servicesGrid.innerHTML = `
+          <div class="service-card animate-slide-up">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>تطوير المواقع</h3>
+            <p>نقوم بتطوير مواقع احترافية متوافقة مع جميع الأجهزة وبأحدث التقنيات.</p>
+            <a href="services.html" class="service-link">المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="service-card animate-slide-up">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>تطبيقات الجوال</h3>
+            <p>تطوير تطبيقات للهواتف الذكية متوافقة مع أنظمة iOS و Android.</p>
+            <a href="services.html" class="service-link">المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="service-card animate-slide-up">
+            <div class="service-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>تحسين محركات البحث</h3>
+            <p>نساعدك على تحسين ظهور موقعك في نتائج محركات البحث وزيادة الزيارات.</p>
+            <a href="services.html" class="service-link">المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+        `;
+      }
+    }
+    
+    // تحميل المشاريع المميزة من API
+    async function loadFeaturedProjects() {
+      try {
+        const response = await fetch('./api/projects.php?featured=1');
+        const result = await response.json();
+        const projects = result.data || [];
+        
+        const portfolioGrid = document.getElementById('portfolio-grid');
+        portfolioGrid.innerHTML = '';
+        
+        // عرض أول 3 مشاريع فقط
+        const limitedProjects = projects.slice(0, 3);
+        
+        limitedProjects.forEach(project => {
+          portfolioGrid.innerHTML += `
+            <div class="portfolio-item animate-slide-up" data-category="${project.category || 'web'}">
+              <div class="portfolio-image">
+                <img src="${project.image}" alt="${project.title}" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h3>${project.title}</h3>
+                    <p>${project.short_description || project.description.substring(0, 50) + '...'}</p>
+                    <a href="portfolio.html#project-${project.id}" class="portfolio-link">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        // إظهار بيانات افتراضية في حالة الخطأ
+        const portfolioGrid = document.getElementById('portfolio-grid');
+        portfolioGrid.innerHTML = `
+          <div class="portfolio-item animate-slide-up" data-category="web">
+            <div class="portfolio-image">
+              <img src="./assets/images/service-placeholder.jpg" alt="مشروع 1" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>موقع شركة استثمار</h3>
+                  <p>تصميم وتطوير موقع متكامل لشركة استثمار عقاري</p>
+                  <a href="portfolio.html" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item animate-slide-up" data-category="app">
+            <div class="portfolio-image">
+              <img src="./assets/images/service-placeholder.jpg" alt="مشروع 2" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>تطبيق توصيل طلبات</h3>
+                  <p>تطبيق جوال لإدارة وتوصيل الطلبات</p>
+                  <a href="portfolio.html" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item animate-slide-up" data-category="design">
+            <div class="portfolio-image">
+              <img src="./assets/images/service-placeholder.jpg" alt="مشروع 3" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>هوية بصرية لشركة ناشئة</h3>
+                  <p>تصميم هوية بصرية متكاملة لشركة تقنية</p>
+                  <a href="portfolio.html" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+    
+    // تحميل البيانات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+      loadServices();
+      loadFeaturedProjects();
+    });
+  </script>
 </body>
 </html>
