@@ -99,7 +99,7 @@ async function loadFeaturedProjects() {
         }
         
         const data = await response.json();
-        const projects = Array.isArray(data) ? data : (data.data || []);
+        const projects = data.success ? data.data : [];
         
         if (!projects.length) {
             featuredProjectsContainer.innerHTML = '<p class="text-center">لا توجد مشاريع مميزة للعرض</p>';
@@ -143,7 +143,7 @@ async function loadTeamMembers() {
         }
         
         const data = await response.json();
-        const team = Array.isArray(data) ? data : (data.data || []);
+        const team = Array.isArray(data) ? data : [];
         
         if (!team.length) {
             teamContainer.innerHTML = '<p class="text-center">لا يوجد أعضاء فريق للعرض</p>';
@@ -279,6 +279,28 @@ function initTestimonialSlider() {
     });
 }
 
+// Back to top button functionality
+function initBackToTop() {
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (!backToTopButton) return;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Initialize AOS animation library if it exists
 function initAOS() {
     if (typeof AOS !== 'undefined') {
@@ -297,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI components
     initTestimonialSlider();
     animateCounters();
+    initBackToTop();
     initAOS();
     
     // Load data
