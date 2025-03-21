@@ -1,192 +1,165 @@
 
-// Enhanced UI effects and animations for dark mode
+// Main JavaScript file for the website
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Add hover effects to buttons
-  addButtonEffects();
-  
-  // Add glass morphism effect to key elements
-  addGlassMorphism();
-  
-  // Add hover effects to cards
-  addCardHoverEffects();
-  
-  // Initialize section transition effects
-  initSectionTransitions();
-  
-  // Add particle background effect (if element exists)
-  if (document.getElementById('particles-bg')) {
-    initParticleBackground();
-  }
+    // Initialize theme
+    initTheme();
+    
+    // Mobile menu toggle
+    initMobileMenu();
+    
+    // Scroll animations
+    initScrollAnimations();
+    
+    // Service cards hover effect
+    initServiceCards();
 });
 
-// Add special hover effects to buttons
-function addButtonEffects() {
-  const buttons = document.querySelectorAll('.btn-primary, .btn-outline');
-  
-  buttons.forEach(button => {
-    button.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-3px)';
-      this.style.boxShadow = '0 7px 14px rgba(0, 0, 0, 0.2)';
-    });
+// Theme Toggle Functionality
+function initTheme() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
     
-    button.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = 'none';
-    });
-  });
-}
-
-// Add glass morphism effect to elements
-function addGlassMorphism() {
-  const glassElements = document.querySelectorAll('.service-card, .project-card, .team-card, .contact-info, .contact-form-wrapper');
-  
-  glassElements.forEach(element => {
-    element.classList.add('glass-effect');
-  });
-}
-
-// Add hover effects to cards
-function addCardHoverEffects() {
-  const cards = document.querySelectorAll('.service-card, .project-card, .team-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-10px)';
-      this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
-      this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-      this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-    });
+    // Check for saved theme preference or use preferred-color-scheme
+    const savedTheme = localStorage.getItem('theme');
     
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
-      this.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-      this.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
-    });
-  });
-}
-
-// Initialize section transition effects
-function initSectionTransitions() {
-  const sections = document.querySelectorAll('.section');
-  
-  // Create an Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('section-visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  // Observe each section
-  sections.forEach(section => {
-    section.classList.add('section-transition');
-    observer.observe(section);
-  });
-}
-
-// Initialize particle background
-function initParticleBackground() {
-  const canvas = document.getElementById('particles-bg');
-  if (!canvas) return;
-  
-  const ctx = canvas.getContext('2d');
-  
-  // Set canvas to full window width/height
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-  
-  // Create particles
-  const particles = [];
-  const particleCount = 100;
-  
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 2 + 1,
-      speedX: Math.random() * 0.5 - 0.25,
-      speedY: Math.random() * 0.5 - 0.25,
-      color: `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`
-    });
-  }
-  
-  // Animation loop
-  function animate() {
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Update and draw particles
-    particles.forEach(particle => {
-      // Update position
-      particle.x += particle.speedX;
-      particle.y += particle.speedY;
-      
-      // Wrap around screen
-      if (particle.x < 0) particle.x = canvas.width;
-      if (particle.x > canvas.width) particle.x = 0;
-      if (particle.y < 0) particle.y = canvas.height;
-      if (particle.y > canvas.height) particle.y = 0;
-      
-      // Draw particle
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = particle.color;
-      ctx.fill();
-    });
-    
-    // Draw connections between nearby particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 100) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
+    if (savedTheme === 'light') {
+        body.classList.remove('dark-mode');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    } else {
+        // Default to dark mode
+        body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
     }
     
-    requestAnimationFrame(animate);
-  }
-  
-  animate();
+    // Theme toggle button event listener
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            localStorage.setItem('theme', 'light');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
 }
 
-// CSS class for section transitions
-const style = document.createElement('style');
-style.textContent = `
-  .section-transition {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .section-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-  }
-  
-  .float-animation {
-    animation: float 5s ease-in-out infinite;
-  }
-`;
-document.head.appendChild(style);
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.querySelector('.main-nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+}
+
+// Scroll Animations
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('section');
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Initial check for elements in viewport
+    sections.forEach(section => {
+        if (isInViewport(section)) {
+            section.classList.add('in-view');
+        }
+    });
+    
+    // Check on scroll
+    window.addEventListener('scroll', function() {
+        sections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('in-view');
+            }
+        });
+    });
+}
+
+// Service Cards Hover Effects
+function initServiceCards() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('hovered');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('hovered');
+        });
+    });
+}
+
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add parallax effect to background elements
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.pageYOffset;
+    
+    // Apply parallax effect to hero section
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        heroSection.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    }
+});
+
+// Dynamic copyright year
+document.addEventListener('DOMContentLoaded', function() {
+    const footerYear = document.querySelector('.footer-bottom p');
+    if (footerYear) {
+        const currentYear = new Date().getFullYear();
+        footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
+    }
+});
