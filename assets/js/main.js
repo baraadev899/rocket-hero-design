@@ -1,5 +1,5 @@
 
-// Main JavaScript File
+// Main JavaScript File for Rocket Agency
 
 // DOM Elements
 const body = document.querySelector('body');
@@ -47,7 +47,7 @@ async function loadServices() {
     try {
         servicesContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
-        const response = await fetch('api/services.php');
+        const response = await fetch('admin/api/services.php');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -93,7 +93,7 @@ async function loadFeaturedProjects() {
     try {
         featuredProjectsContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
-        const response = await fetch('api/projects.php?featured=1');
+        const response = await fetch('admin/api/projects.php?featured=1');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -137,13 +137,13 @@ async function loadTeamMembers() {
     try {
         teamContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         
-        const response = await fetch('api/team.php');
+        const response = await fetch('admin/api/team.php');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         
         const data = await response.json();
-        const team = Array.isArray(data) ? data : [];
+        const team = Array.isArray(data) ? data : (data.data || []);
         
         if (!team.length) {
             teamContainer.innerHTML = '<p class="text-center">لا يوجد أعضاء فريق للعرض</p>';
@@ -314,6 +314,32 @@ function initAOS() {
     }
 }
 
+// Handle dark mode toggle
+function initDarkMode() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (!darkModeToggle) return;
+    
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Set initial dark mode state
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+    }
+    
+    // Toggle dark mode on change
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false');
+        }
+    });
+}
+
 // Document ready function
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI components
@@ -321,9 +347,25 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCounters();
     initBackToTop();
     initAOS();
+    initDarkMode();
     
     // Load data
     loadServices();
     loadFeaturedProjects();
     loadTeamMembers();
+    
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
+            
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
 });

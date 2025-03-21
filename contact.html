@@ -4,96 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا - روكيت</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>اتصل بنا - روكيت أجنسي</title>
+    <meta name="description" content="تواصل مع فريق روكيت أجنسي لمناقشة مشروعك والحصول على استشارة مجانية">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar scrolled">
-        <div class="container-custom">
-            <div class="navbar-content">
-                <!-- Logo -->
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">روكيت</span>
-                    <span class="logo-emoji">🚀</span>
+                    <i class="fas fa-rocket logo-icon"></i>
+                    <span class="logo-text">روكيت أجنسي</span>
                 </a>
-
-                <!-- Desktop Menu -->
-                <nav class="desktop-menu">
-                    <a href="index.html" class="menu-item">الرئيسية</a>
-                    <a href="services.html" class="menu-item">خدماتنا</a>
-                    <a href="portfolio.html" class="menu-item">أعمالنا</a>
-                    <a href="team.html" class="menu-item">فريقنا</a>
-                    <a href="contact.html" class="menu-item active">اتصل بنا</a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="projects.html">المشاريع</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                    </ul>
                 </nav>
-
-                <!-- CTA Button -->
-                <div class="cta-container">
-                    <a href="contact.html" class="cta-button">احصل على عرض سعر</a>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="القائمة">
-                    <i class="fas fa-bars menu-icon"></i>
-                    <i class="fas fa-times close-icon"></i>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
-
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <nav class="mobile-nav">
-                    <a href="index.html" class="mobile-menu-item">الرئيسية</a>
-                    <a href="services.html" class="mobile-menu-item">خدماتنا</a>
-                    <a href="portfolio.html" class="mobile-menu-item">أعمالنا</a>
-                    <a href="team.html" class="mobile-menu-item">فريقنا</a>
-                    <a href="contact.html" class="mobile-menu-item active">اتصل بنا</a>
-                    <a href="contact.html" class="mobile-cta-button">احصل على عرض سعر</a>
-                </nav>
-            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="projects.html">المشاريع</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
         </div>
     </header>
-
+    
     <!-- Page Header -->
-    <section class="page-header">
-        <div class="container-custom">
-            <h1 class="page-title">اتصل <span class="text-gradient">بنا</span></h1>
-            <p class="page-description">نحن هنا لمساعدتك في تنمية عملك الرقمي. لا تتردد في التواصل معنا للحصول على استشارة مجانية.</p>
+    <section class="hero-section" style="height: 50vh; min-height: 400px;">
+        <div class="container">
+            <div class="row">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800">
+                        تواصل معنا
+                    </h1>
+                    <p class="hero-text" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        نحن هنا للإجابة على استفساراتك ومساعدتك في تحقيق أهدافك الرقمية
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container-custom">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2 class="contact-title">تواصل <span class="text-gradient">معنا</span></h2>
-                    <p class="contact-description">
-                        نحن هنا لمساعدتك في تحقيق أهدافك الرقمية. تواصل معنا اليوم للحصول على استشارة مجانية.
-                    </p>
+    <section class="contact-section bg-dark">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info glass-effect" data-aos="fade-up" data-aos-duration="800">
+                    <h2>معلومات التواصل</h2>
+                    <p>يمكنك التواصل معنا من خلال وسائل الاتصال التالية أو إرسال رسالة باستخدام النموذج.</p>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>البريد الإلكتروني</h3>
-                                <p>info@rocketagency.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>رقم الهاتف</h3>
-                                <p>+966 123 456 789</p>
-                            </div>
-                        </div>
-                        
+                    <div class="contact-details" id="contactDetails">
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -103,31 +100,63 @@
                                 <p>الرياض، المملكة العربية السعودية</p>
                             </div>
                         </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>الهاتف</h3>
+                                <p>+966 51 234 5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@rocket-agency.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>ساعات العمل</h3>
+                                <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="contact-hours">
-                        <h3>ساعات العمل</h3>
-                        <p>الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً</p>
-                        <p>الجمعة - السبت: مغلق</p>
-                    </div>
-                    
-                    <div class="social-media">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="contact-social">
+                        <h3>تابعنا على</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="contact-form-container">
+                <div class="contact-form-wrapper glass-effect" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h2>أرسل لنا رسالة</h2>
+                    <p>يرجى ملء النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن.</p>
+                    
                     <form id="contactForm" class="contact-form">
+                        <div id="formMessage" class="form-message"></div>
+                        
                         <div class="form-group">
-                            <label for="name">الاسم</label>
+                            <label for="name">الاسم الكامل *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
+                            <label for="email">البريد الإلكتروني *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
@@ -137,111 +166,91 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">الرسالة</label>
+                            <label for="subject">الموضوع *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-button">
-                            <span>إرسال الرسالة</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                        
-                        <div class="form-message" id="formMessage"></div>
+                        <button type="submit" class="btn btn-primary btn-block">إرسال الرسالة</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Map Section -->
     <section class="map-section">
-        <div class="container-custom">
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463876.99395851015!2d46.54244051890668!3d24.725155249873775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1655118036475!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463880.89338221894!2d46.54225362152062!3d24.725555354888635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sua!4v1684162752592!5m2!1sen!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-custom">
+        <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <a href="index.html" class="footer-logo">
-                        <span>روكيت</span>
-                        <span class="logo-emoji">🚀</span>
-                    </a>
-                    <p class="footer-description">
-                        شركة رائدة في مجال التسويق الإلكتروني وتطوير المواقع والتطبيقات، نسعى دائماً لتقديم حلول إبداعية لعملائنا.
-                    </p>
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>روكيت أجنسي</span>
+                    </div>
+                    <p>وكالة متخصصة في تصميم وتطوير مواقع الويب والتطبيقات وخدمات التسويق الرقمي.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                
                 <div class="footer-links">
-                    <div class="footer-links-column">
-                        <h3 class="footer-title">روابط سريعة</h3>
-                        <ul class="footer-menu">
-                            <li><a href="index.html">الرئيسية</a></li>
-                            <li><a href="services.html">خدماتنا</a></li>
-                            <li><a href="portfolio.html">أعمالنا</a></li>
-                            <li><a href="team.html">فريقنا</a></li>
-                            <li><a href="contact.html">اتصل بنا</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-column">
-                        <h3 class="footer-title">خدماتنا</h3>
-                        <ul class="footer-menu">
-                            <li><a href="services.html">تطوير المواقع</a></li>
-                            <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">التسويق الإلكتروني</a></li>
-                            <li><a href="services.html">الهوية البصرية</a></li>
-                            <li><a href="services.html">تحسين محركات البحث</a></li>
-                        </ul>
-                    </div>
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="projects.html">المشاريع</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-newsletter">
-                    <h3 class="footer-title">اشترك في النشرة الإخبارية</h3>
-                    <p>اشترك للحصول على آخر الأخبار والعروض الخاصة</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="البريد الإلكتروني" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
+                <div class="footer-links">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="services.html">تصميم مواقع الويب</a></li>
+                        <li><a href="services.html">تطوير تطبيقات الموبايل</a></li>
+                        <li><a href="services.html">تحسين محركات البحث</a></li>
+                        <li><a href="services.html">التسويق الإلكتروني</a></li>
+                        <li><a href="services.html">الهوية البصرية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>معلومات التواصل</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+966512345678">+966 51 234 5678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@rocket-agency.com">info@rocket-agency.com</a></p>
+                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 9:00 ص - 5:00 م</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p class="copyright">© 2023 روكيت. جميع الحقوق محفوظة.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <p>© <span id="currentYear">2023</span> روكيت أجنسي. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <div class="toast-content">
-            <div class="toast-icon">
-                <i class="fas fa-check-circle success-icon"></i>
-                <i class="fas fa-exclamation-circle error-icon"></i>
-            </div>
-            <div class="toast-message" id="toastMessage"></div>
-        </div>
-        <button class="toast-close" id="toastClose"><i class="fas fa-times"></i></button>
-    </div>
-
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>

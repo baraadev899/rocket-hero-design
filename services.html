@@ -4,176 +4,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا - روكيت</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <title>خدماتنا - روكيت أجنسي</title>
+    <meta name="description" content="تعرف على خدمات روكيت أجنسي المتخصصة في تصميم وتطوير مواقع الويب والتطبيقات وحلول التسويق الرقمي">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/services.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar scrolled">
-        <div class="container-custom">
-            <div class="navbar-content">
-                <!-- Logo -->
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">روكيت</span>
-                    <span class="logo-emoji">🚀</span>
+                    <i class="fas fa-rocket logo-icon"></i>
+                    <span class="logo-text">روكيت أجنسي</span>
                 </a>
-
-                <!-- Desktop Menu -->
-                <nav class="desktop-menu">
-                    <a href="index.html" class="menu-item">الرئيسية</a>
-                    <a href="services.html" class="menu-item active">خدماتنا</a>
-                    <a href="portfolio.html" class="menu-item">أعمالنا</a>
-                    <a href="about.html" class="menu-item">من نحن</a>
-                    <a href="contact.html" class="menu-item">اتصل بنا</a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html" class="active">خدماتنا</a></li>
+                        <li><a href="projects.html">المشاريع</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
                 </nav>
-
-                <!-- CTA Button -->
-                <div class="cta-container">
-                    <a href="contact.html" class="cta-button">احصل على عرض سعر</a>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="القائمة">
-                    <i class="fas fa-bars menu-icon"></i>
-                    <i class="fas fa-times close-icon"></i>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <nav class="mobile-nav">
-                    <a href="index.html" class="mobile-menu-item">الرئيسية</a>
-                    <a href="services.html" class="mobile-menu-item active">خدماتنا</a>
-                    <a href="portfolio.html" class="mobile-menu-item">أعمالنا</a>
-                    <a href="about.html" class="mobile-menu-item">من نحن</a>
-                    <a href="contact.html" class="mobile-menu-item">اتصل بنا</a>
-                    <a href="contact.html" class="mobile-cta-button">احصل على عرض سعر</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container-custom">
-            <h1 class="page-title">خدماتنا <span class="text-gradient">المميزة</span></h1>
-            <p class="page-subtitle">نقدم باقة متكاملة من الخدمات الرقمية لمساعدة عملك على النمو والوصول لجمهورك المستهدف</p>
         </div>
         
-        <div class="header-decoration"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html" class="active">خدماتنا</a></li>
+                <li><a href="projects.html">المشاريع</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="hero-section" style="height: 50vh; min-height: 400px;">
+        <div class="container">
+            <div class="row">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800">
+                        خدماتنا
+                    </h1>
+                    <p class="hero-text" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        نقدم مجموعة متنوعة من الخدمات الرقمية المتخصصة لمساعدة عملك على النمو والازدهار
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <!-- Services List Section -->
-    <section class="services-list-section">
-        <div class="container-custom">
-            <div id="servicesList" class="services-list">
-                <!-- Services details will be loaded here -->
+    
+    <!-- Services Section -->
+    <section class="services-page section bg-dark">
+        <div class="container">
+            <div id="servicesContainer" class="services-container">
+                <!-- Services will be loaded dynamically via JavaScript -->
                 <div class="loading-spinner">
                     <div class="spinner"></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container-custom">
-            <div class="cta-content">
-                <h2 class="cta-title">مستعد لبدء مشروعك الرقمي القادم؟</h2>
-                <p class="cta-description">تواصل معنا الآن للحصول على استشارة مجانية ومناقشة تفاصيل مشروعك</p>
-                <a href="contact.html" class="cta-button-large">تواصل معنا الآن</a>
+    
+    <!-- Service Details Modal -->
+    <div id="serviceDetails" class="service-details-modal">
+        <!-- Modal content will be added dynamically via JavaScript -->
+    </div>
+    
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-aos="fade-up" data-aos-duration="800">الأسئلة الشائعة</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">أسئلة يتم طرحها بشكل متكرر</h2>
+                <p class="section-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    إجابات على الأسئلة الأكثر شيوعاً حول خدماتنا
+                </p>
+            </div>
+            
+            <div class="faq-container" id="faqContainer">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="faq-question">
+                        <h3>ما هي مدة تنفيذ مشروع تصميم وتطوير موقع ويب؟</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            تختلف مدة تنفيذ المشروع حسب حجمه ومتطلباته. عادةً ما يستغرق مشروع تصميم وتطوير موقع ويب بسيط من 2-4 أسابيع، بينما قد تستغرق المشاريع الأكثر تعقيداً من 6-12 أسبوع.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h3>كم تكلفة تصميم وتطوير موقع ويب؟</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            تعتمد التكلفة على نوع الموقع وحجمه والميزات المطلوبة. نقدم باقات تبدأ من 3000 ريال للمواقع البسيطة، وتزداد التكلفة مع زيادة التعقيد والميزات. يمكنك التواصل معنا للحصول على عرض سعر مفصل لمشروعك.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h3>هل تقدمون خدمات الاستضافة وتسجيل النطاقات؟</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            نعم، نقدم خدمات الاستضافة وتسجيل النطاقات ضمن باقاتنا. نوفر خدمات استضافة موثوقة وسريعة، كما نساعدك في اختيار وتسجيل النطاق المناسب لمشروعك.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h3>هل تقدمون خدمات الصيانة والدعم الفني بعد إطلاق الموقع؟</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            بالتأكيد، نقدم باقات صيانة ودعم فني شهرية وسنوية لضمان استمرارية عمل موقعك بكفاءة. تشمل خدمات الصيانة التحديثات الأمنية، النسخ الاحتياطية، إصلاح الأخطاء، والتحسينات المستمرة.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="faq-question">
+                        <h3>هل مواقع الويب التي تصممونها متوافقة مع الأجهزة المحمولة؟</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            نعم، جميع مواقع الويب التي نصممها متوافقة تماماً مع جميع أحجام الشاشات والأجهزة (Responsive Design). نحرص على توفير تجربة مستخدم ممتازة على أجهزة الكمبيوتر والهواتف الذكية والأجهزة اللوحية.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container" data-aos="fade-up" data-aos-duration="800">
+                <h2>هل تحتاج إلى مساعدة في مشروعك؟</h2>
+                <p>تواصل معنا الآن لمناقشة احتياجاتك والحصول على استشارة مجانية</p>
+                <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-custom">
+        <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
+                <div class="footer-about">
                     <div class="footer-logo">
-                        <span>روكيت</span>
-                        <span>🚀</span>
+                        <i class="fas fa-rocket"></i>
+                        <span>روكيت أجنسي</span>
                     </div>
-                    <p class="footer-description">
-                        وكالة متخصصة في تطوير وتصميم المواقع والتطبيقات، نقدم حلولًا رقمية مبتكرة تساعد عملك على النمو.
-                    </p>
+                    <p>وكالة متخصصة في تصميم وتطوير مواقع الويب والتطبيقات وخدمات التسويق الرقمي.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                
                 <div class="footer-links">
-                    <div>
-                        <h3 class="footer-title">روابط سريعة</h3>
-                        <ul class="footer-menu">
-                            <li><a href="index.html">الرئيسية</a></li>
-                            <li><a href="services.html">خدماتنا</a></li>
-                            <li><a href="portfolio.html">أعمالنا</a></li>
-                            <li><a href="about.html">من نحن</a></li>
-                            <li><a href="contact.html">اتصل بنا</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="footer-title">خدماتنا</h3>
-                        <ul class="footer-menu">
-                            <li><a href="services.html">تصميم المواقع</a></li>
-                            <li><a href="services.html">تطوير التطبيقات</a></li>
-                            <li><a href="services.html">تحسين محركات البحث</a></li>
-                            <li><a href="services.html">التسويق الرقمي</a></li>
-                            <li><a href="services.html">إدارة وسائل التواصل</a></li>
-                        </ul>
-                    </div>
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="projects.html">المشاريع</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-newsletter">
-                    <h3 class="footer-title">النشرة البريدية</h3>
-                    <p>اشترك في نشرتنا البريدية للحصول على آخر الأخبار والعروض</p>
-                    
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="البريد الإلكتروني" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
+                <div class="footer-links">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="services.html">تصميم مواقع الويب</a></li>
+                        <li><a href="services.html">تطوير تطبيقات الموبايل</a></li>
+                        <li><a href="services.html">تحسين محركات البحث</a></li>
+                        <li><a href="services.html">التسويق الإلكتروني</a></li>
+                        <li><a href="services.html">الهوية البصرية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>معلومات التواصل</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+966512345678">+966 51 234 5678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@rocket-agency.com">info@rocket-agency.com</a></p>
+                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 9:00 ص - 5:00 م</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p class="copyright">
-                    © <span id="currentYear">2023</span> روكيت. جميع الحقوق محفوظة.
-                </p>
-                
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <p>© <span id="currentYear">2023</span> روكيت أجنسي. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <div class="toast-content">
-            <div class="toast-icon">
-                <i class="fas fa-check-circle success-icon"></i>
-                <i class="fas fa-exclamation-circle error-icon"></i>
-            </div>
-            <p id="toastMessage" class="toast-message"></p>
-        </div>
-        <button id="toastClose" class="toast-close"><i class="fas fa-times"></i></button>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Set current year for copyright
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/services.js"></script>
 </body>
